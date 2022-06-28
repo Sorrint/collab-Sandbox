@@ -2,6 +2,7 @@ import { Module } from '../core/module';
 import { randomShape } from '../assets/shape';
 import { addEventContainer } from '../utils';
 import { random } from '../utils';
+import { randomColor } from '../utils';
 
 export class ShapeModule extends Module {
     #body
@@ -24,6 +25,8 @@ export class ShapeModule extends Module {
         svgContainer.innerHTML = randomShape();
         svgContainer.style.left = `${random(30, this.#width - 190)}px`;
         svgContainer.style.top = `${random(30, this.#height - 190)}px`;
+        svgContainer.style.fill = randomColor();
+        svgContainer.style.stroke = randomColor();
         
         return eventContainer.append(svgContainer);
     }
