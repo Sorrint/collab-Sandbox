@@ -24,7 +24,8 @@
 @font-face {
   font-family: "OpenSans";
   src: url("../assets/fonts/OpenSans-regular.woff");
-  src: local("OpenSans"), url("./fonts/OpenSans-regular.woff") format("woff"),
+  src: local("OpenSans"),
+    url("../assets/fonts/OpenSans-regular.woff") format("woff"),
     url("../assets/fonts/OpenSans-regular.ttf") format("true-type");
   font-weight: normal;
   font-style: normal;
@@ -33,7 +34,8 @@
 @font-face {
   font-family: "ROBOTO";
   src: url("../assets/fonts/Roboto-Regular.woff");
-  src: local("ROBOTO"), url("./fonts/Roboto-Regular.woff") format("woff"),
+  src: local("ROBOTO"),
+    url("../assets/fonts/Roboto-Regular.woff") format("woff"),
     url("../assets/fonts/Roboto-Regular.ttf") format("truetype"),
     url("../assets/fonts/Roboto-Regular.svg") format("svg");
   font-weight: 500;
