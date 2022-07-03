@@ -133,8 +133,6 @@ h6 {
 body,
 .event-container {
   font-size: 14px;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  height: 100vh;
   width: 100%;
   background-color: #1d212b;
   color: white;
@@ -145,6 +143,10 @@ body,
   display: none;
 }
 
+.active {
+  display: block;
+}
+
 .body {
   font-family: 'PFDinTextCondPro medium';
   display: flex;
@@ -152,20 +154,12 @@ body,
   &__sidebar {
     display: flex;
     flex-direction: column;
-
     flex: 0 1 250px;
   }
   &__content {
     flex: 1 1 auto;
-
-    margin: 10px;
-
     border: 1px solid red;
   }
-}
-
-.active {
-  display: block;
 }
 
 @import './sidebar.scss';
