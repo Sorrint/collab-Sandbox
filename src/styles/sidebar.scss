@@ -14,7 +14,7 @@
 
 .sidebar__nav,
 .sidebar__contacts {
-  font-family: "ROBOTO";
+  font-family: 'ROBOTO';
   color: white;
   letter-spacing: 1px;
   font-size: 14px;
@@ -46,7 +46,7 @@
 
 .nav__element span::after {
   margin-top: 5px;
-  content: "";
+  content: '';
   width: 0px;
   height: 3px;
   background-color: aliceblue;
@@ -59,7 +59,7 @@
 }
 
 .sidebar__nav .nav__element.active span::after {
-  content: "";
+  content: '';
   display: block;
   width: 40px;
   height: 3px;

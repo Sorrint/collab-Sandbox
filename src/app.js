@@ -1,31 +1,31 @@
 //>>>>>>>>   Импорт стилей   <<<<<<<<<
-import "./styles/styles.scss";
-import { ContextMenu } from "./menu";
+import './styles/styles.scss';
+import { ContextMenu } from './menu';
 
 //>>>>>>>>   Импорт модулей   <<<<<<<<<
-import { ClicksModule } from "./modules/clicks.module";
-import { TimerModule } from "./modules/timer.module";
-import { ShapeModule } from "./modules/shape.module";
-import { CustomMessage } from "./modules/custom_message.module";
-import { BackgroundModule } from "./modules/background.module";
-import { Soundmodule } from "./modules/sound.module";
+import { ClicksModule } from './modules/clicks.module';
+import { TimerModule } from './modules/timer.module';
+import { ShapeModule } from './modules/shape.module';
+import { CustomMessage } from './modules/custom_message.module';
+import { BackgroundModule } from './modules/background.module';
+import { Soundmodule } from './modules/sound.module';
 
 //>>>>>>>>   Создание меню   <<<<<<<<<
-const contextMenu = new ContextMenu("ul");
-contextMenu.add(new ShapeModule("shape", "Создать фигуру"));
-contextMenu.add(new TimerModule("timer", "Обратный отсчёт"));
-contextMenu.add(new CustomMessage("custom-message", "Кастомное сообщение"));
-contextMenu.add(new Soundmodule("sound", "Случайный звук"));
-contextMenu.add(new ClicksModule("click", "Счетчик кликов"));
-contextMenu.add(new BackgroundModule("background", "Фон"));
+const contextMenu = new ContextMenu('ul');
+contextMenu.add(new ShapeModule('shape', 'Создать фигуру'));
+contextMenu.add(new TimerModule('timer', 'Обратный отсчёт'));
+contextMenu.add(new CustomMessage('custom-message', 'Кастомное сообщение'));
+contextMenu.add(new Soundmodule('sound', 'Случайный звук'));
+contextMenu.add(new ClicksModule('click', 'Счетчик кликов'));
+contextMenu.add(new BackgroundModule('background', 'Фон'));
 
 //>>>>>>>>   Отображение меню   <<<<<<<<<
-document.body.addEventListener("contextmenu", (event) => {
+document.body.addEventListener('contextmenu', (event) => {
   event.preventDefault();
   const windowHeight = document.documentElement.clientHeight;
   const windowWidth = document.documentElement.clientWidth;
 
-  const menu = document.querySelector(".menu");
+  const menu = document.querySelector('.menu');
 
   contextMenu.open();
   const menuWidth = menu.offsetWidth + 50;
@@ -41,7 +41,7 @@ document.body.addEventListener("contextmenu", (event) => {
 });
 
 //>>>>>>>>   Обработка выбранного пункта меню   <<<<<<<<<
-contextMenu.el.addEventListener("click", (event) => {
+contextMenu.el.addEventListener('click', (event) => {
   const { target } = event;
   const selectModule = target.dataset.type;
   const runApp = contextMenu.modules.find(
@@ -49,10 +49,10 @@ contextMenu.el.addEventListener("click", (event) => {
   );
   runApp.trigger();
   contextMenu.close();
-  const previousContainer = document.querySelector(".active");
+  const previousContainer = document.querySelector('.active');
   if (previousContainer) {
-    previousContainer.classList.remove("active");
+    previousContainer.classList.remove('active');
   }
   const selectContainer = document.querySelector(`.${selectModule}`);
-  selectContainer.classList.add("active");
+  selectContainer.classList.add('active');
 });
