@@ -27,9 +27,9 @@ body,
   display: block;
 }
 
-@import './menu.scss';
-@import './modules/timer.scss';
-@import './modules/clicks.scss';
-@import './modules/sound.scss';
-@import './modules/custom-message.scss';
-@import './modules/shape.scss';
+@import "./contextmenu/menu.scss";
+@import "./contextmenu/timer.scss";
+@import "./contextmenu/clicks.scss";
+@import "./contextmenu/sound.scss";
+@import "./contextmenu/custom-message.scss";
+@import "./contextmenu/shape.scss";

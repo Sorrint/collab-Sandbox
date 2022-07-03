@@ -1,6 +1,6 @@
 //>>>>>>>>   Импорт стилей   <<<<<<<<<
-import './style.scss'
-import { ContextMenu } from './menu';
+import "./styles/styles.scss";
+import { ContextMenu } from "./menu";
 
 //>>>>>>>>   Импорт модулей   <<<<<<<<<
 import { ClicksModule } from "./modules/clicks.module";
