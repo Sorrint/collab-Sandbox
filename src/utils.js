@@ -6,7 +6,7 @@ export function randomColor() {
   const value1 = random(0, 255);
   const value2 = random(0, 255);
   const value3 = random(0, 255);
-  return `rgb(${value1}, ${value2}, ${value3})`;
+  return `rgba(${value1}, ${value2}, ${value3})`;
 }
 
 export function addZero(number) {

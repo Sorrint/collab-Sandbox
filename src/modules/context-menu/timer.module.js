@@ -1,5 +1,6 @@
 import { Module } from './core/module';
 import { addEventContainer, addZero, randomColor } from '../../utils';
+import JS_MEME from '../../assets/meme1.jpg';
 
 export class TimerModule extends Module {
   #timerText;
