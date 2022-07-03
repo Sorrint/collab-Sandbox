@@ -147,11 +147,36 @@ body,
 
 .body {
   font-family: "PFDinTextCondPro medium";
+  display: flex;
+  flex: 0 1 auto;
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+
+    // position: fixed;
+    // left: 0;
+    // top: 0;
+
+    width: 250px;
+    // height: 100vh;
+  }
+  &__content {
+    flex: 1 0 auto;
+    // height: 100vh;
+
+    margin-left: 10px;
+
+    border: 1px solid red;
+  }
 }
 
 .active {
   display: block;
 }
+
+@import "./sidebar.scss";
+@import "./main.scss";
 
 @import "./contextmenu/menu.scss";
 @import "./contextmenu/timer.scss";
@@ -159,4 +184,3 @@ body,
 @import "./contextmenu/sound.scss";
 @import "./contextmenu/custom-message.scss";
 @import "./contextmenu/shape.scss";
-@import "./sidebar.scss";
