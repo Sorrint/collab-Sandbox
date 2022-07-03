@@ -1,0 +1,68 @@
+
+.timer-text {
+    align-items: center;
+    margin: 0 auto;
+    font-size: 5rem;
+  }
+  
+  .image-meme {
+    left: 10%;
+    display: block;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .user-input {
+    min-width: 400px;
+    padding: 0 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #343434;
+    width: 30%;
+    height: 15vh;
+    min-height: 80px;
+  
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+  }
+  
+  .limit-message {
+    display: block;
+    width: 450px;
+    text-align: center;
+    padding: 10px;
+    height: 50px;
+    font-size: 2rem;
+    background-color: #343434;
+    margin: 0 auto;
+  }
+
+  .confirm {
+    width: 40%;
+  }
+  
+  .user-button {
+    margin-right: 5px;
+    display: flex;
+    width: 20%;
+    height: 10vh;
+    background-color: #343434;
+    border-radius: 5px;
+    font-size: 2rem;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    min-height: 50px;
+    min-width: 70px;
+    cursor: pointer;
+  }
+  
+  .confirm {
+    width: 30%;
+  }

@@ -1,0 +1,49 @@
+
+.image-meme {
+    position: relative;
+    left: 50%;
+    display: block;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .weather-block {
+    display: inline-block;
+    margin: 0 20px 20px 0;
+    font-family: "Montserrat", sans-serif;
+    width: 260px;
+    color: #1b1a1a;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 40px 40px;
+    overflow: hidden;
+    max-width: 260px;
+    max-height: 225px;
+  }
+  
+  .icon_and_temp_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    font-size: 2.5em;
+    font-weight: 100;
+  }
+  
+  .weather_icon {
+    width: 100px;
+    height: 102.67px;
+  
+    font-size: 30px;
+  }
+  
+  .weather_icon {
+    width: 100px;
+    height: 102.67px;
+  }
+  
+  .custom-message-container {
+    display: flex;
+  }
