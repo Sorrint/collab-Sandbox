@@ -1,6 +1,6 @@
 import { Menu } from './core/menu';
 import { Module } from './core/module';
-import { PARENT_HEIGHT, PARENT_WIDTH } from './modules/global';
+import { PARENT_HEIGHT, PARENT_WIDTH } from '../../global';
 
 export class ContextMenu extends Menu {
   #parent;

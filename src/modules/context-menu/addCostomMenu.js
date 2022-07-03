@@ -1,4 +1,4 @@
-import { ContextMenu } from '../menu';
+import { ContextMenu } from './menu';
 import { ShapeModule } from './shape.module';
 import { TimerModule } from './timer.module';
 import { CustomMessage } from './custom_message.module';
