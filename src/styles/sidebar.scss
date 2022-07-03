@@ -1,226 +1,160 @@
 @charset "UTF-8";
-/*Обнуление*/
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
+
+@font-face {
+  font-family: "PFDinTextCondPro";
+  src: url("../assets/fonts/pfdintextcondpro-regular.eot");
+  src: local("PFDinTextCondPro"),
+    url("../assets/fonts/pfdintextcondpro-regular.woff") format("woff"),
+    url("../assets/fonts/pfdintextcondpro-regular.ttf") format("truetype"),
+    url("../assets/fonts/pfdintextcondpro-regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PFDinTextCondPro medium";
+  src: url("../assets/fonts/pfdintextcondpro-medium.eot");
+  src: local("PFDinTextCondPro"),
+    url("../assets/fonts/pfdintextcondpro-medium.woff") format("woff"),
+    url("../assets/fonts/pfdintextcondpro-medium.ttf") format("truetype"),
+    url("../assets/fonts/pfdintextcondpro-medium.svg") format("svg");
+  font-weight: 500;
+  font-style: normal;
 }
 
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+@font-face {
+  font-family: "OpenSans";
+  src: url("../assets/fonts/OpenSans-regular.woff");
+  src: local("OpenSans"), url("./fonts/OpenSans-regular.woff") format("woff"),
+    url("../assets/fonts/OpenSans-regular.ttf") format("true-type");
+  font-weight: normal;
+  font-style: normal;
 }
 
-:focus, :active {
-  outline: none;
+@font-face {
+  font-family: "ROBOTO";
+  src: url("../assets/fonts/Roboto-Regular.woff");
+  src: local("ROBOTO"), url("./fonts/Roboto-Regular.woff") format("woff"),
+    url("../assets/fonts/Roboto-Regular.ttf") format("truetype"),
+    url("../assets/fonts/Roboto-Regular.svg") format("svg");
+  font-weight: 500;
+  font-style: normal;
 }
 
-a:focus, a:active {
-  outline: none;
+.body {
+  font-family: "PFDinTextCondPro medium";
 }
 
-nav, footer, header, aside {
-  display: block;
+.sidebar {
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 250px;
+  height: 100vh;
+
+  border: 1px solid black;
+
+  background-size: cover;
+  background-color: green;
+  background: url(https://camouf.ru/local/templates/mibazarov/components/bitrix/menu/aside_multimenu/derevo.jpg)
+    no-repeat;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  font-size: 100%;
-  line-height: 1;
+.sidebar::after {
+  position: absolute;
+  content: "";
+  width: 250px;
+  height: 100vh;
+  background: rgba(52, 120, 0, 0.78) !important;
+}
+
+.sidebar__nav,
+.sidebar__contacts {
+  font-family: "ROBOTO";
+  color: white;
+  letter-spacing: 1px;
   font-size: 14px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  font-weight: 600;
+  z-index: 20;
 }
 
-input, button, textarea {
-  font-family: none;
+.sidebar__nav {
+  border-bottom: 1px dashed rgba(190, 190, 190, 0.7);
+  padding: 5px 0 10px 0;
+  background: rgba(0, 0, 0, 0.3);
 }
 
-input ::-ms-clear {
-  display: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
-a, a:visited {
-  text-decoration: none;
-}
-
-ul li {
+.nav__menu {
   list-style: none;
 }
 
-img {
-  vertical-align: top;
+.nav__element {
+  height: 33px;
+  margin: 0 0 3px 0;
+  padding: 5px 0 1px 30px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: inherit;
-  font-weight: 400;
+.nav__element span {
+  cursor: pointer;
+  display: block;
+  height: 100%;
 }
 
-/*----------------------------------------*/
+.nav__element span::after {
+  margin-top: 5px;
+  content: "";
+  width: 0px;
+  height: 3px;
+  background-color: aliceblue;
+}
 
-@font-face {
-    font-family: "PFDinTextCondPro";
-    src: url("./fonts/pfdintextcondpro-regular.eot");
-    src: local("PFDinTextCondPro"),
-      url("./fonts/pfdintextcondpro-regular.woff") format("woff"),
-      url("./fonts/pfdintextcondpro-regular.ttf") format("truetype"),
-      url("./fonts/pfdintextcondpro-regular.svg") format("svg");
-    font-weight: normal;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: "PFDinTextCondPro medium";
-    src: url("./fonts/pfdintextcondpro-medium.eot");
-    src: local("PFDinTextCondPro"),
-      url("./fonts/pfdintextcondpro-medium.woff") format("woff"),
-      url("./fonts/pfdintextcondpro-medium.ttf") format("truetype"),
-      url("./fonts/pfdintextcondpro-medium.svg") format("svg");
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: "OpenSans";
-    src: url("./fonts/OpenSans-regular.woff");
-    src: local("OpenSans"), url("./fonts/OpenSans-regular.woff") format("woff"),
-      url("./fonts/OpenSans-regular.ttf") format("true-type");
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: "ROBOTO";
-    src: url("./fonts/Roboto-Regular.woff");
-    src: local("ROBOTO"), url("./fonts/Roboto-Regular.woff") format("woff"),
-      url("./fonts/Roboto-Regular.ttf") format("truetype"),
-      url("./fonts/Roboto-Regular.svg") format("svg");
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  .body {
-    font-family: "PFDinTextCondPro medium";
-  }
-  
-  .sidebar {
-    background-color: green;
-    position: fixed;
-    width: 250px;
-    height: 100vh;
-    left: 0;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    background: url(https://camouf.ru/local/templates/mibazarov/components/bitrix/menu/aside_multimenu/derevo.jpg)
-      no-repeat;
-    border: 1px solid black;
-    background-size: cover;
-  }
-  
-  .sidebar::after {
-    position: absolute;
-    content: "";
-    width: 250px;
-    height: 100vh;
-    background: rgba(52, 120, 0, 0.78) !important;
-  }
-  
-  .sidebar__nav,
-  .sidebar__contacts {
-    font-family: "ROBOTO";
-    color: white;
-    letter-spacing: 1px;
-    font-size: 14px;
-    font-weight: 600;
-    z-index: 20;
-  }
-  
-  .sidebar__nav {
-    border-bottom: 1px dashed rgba(190, 190, 190, 0.7);
-    padding: 5px 0 10px 0;
-    background: rgba(0, 0, 0, 0.3);
-  }
-  
-  .nav__menu {
-    list-style: none;
-  }
-  
-  .nav__element {
-    height: 33px;
-    margin: 0 0 3px 0;
-    padding: 5px 0 1px 30px;
-  }
-  
-  .nav__element span {
-    cursor: pointer;
-    display: block;
-    height: 100%;
-  }
-  
-  .nav__element span::after {
-    margin-top: 5px;
-    content: "";
-    width: 0px;
-    height: 3px;
-    background-color: aliceblue;
-  }
-  
-  .nav__element span:hover::after {
-    display: block;
-    transition: 0.15s ease-out all;
-    width: 40px;
-  }
-  
-  .sidebar__nav .nav__element.active span::after {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 3px;
-    background-color: #7a8e9a;
-  }
-  
-  .sidebar__contacts {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 130px;
-    padding: 23px 0 0 30px;
-    font-size: 13px;
-    font-weight: normal;
-  }
-  
-  .contact__source {
-    color: #ccc;
-  }
-  
-  .sidebar__button {
-    height: 45px;
-    width: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #e2ae00;
-    color: #354550;
-    border-radius: 50px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  
-  .logo__img, .sidebar__logo{
-    background-color: none;
-    width: 250px;
-    z-index: 25;
-  }
-  
+.nav__element span:hover::after {
+  display: block;
+  transition: 0.15s ease-out all;
+  width: 40px;
+}
+
+.sidebar__nav .nav__element.active span::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #7a8e9a;
+}
+
+.sidebar__contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 130px;
+  padding: 23px 0 0 30px;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.contact__source {
+  color: #ccc;
+}
+
+.sidebar__button {
+  height: 45px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #e2ae00;
+  color: #354550;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.logo__img,
+.sidebar__logo {
+  background-color: none;
+  width: 250px;
+  z-index: 25;
+}
