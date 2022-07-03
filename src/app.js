@@ -1,5 +1,5 @@
 //>>>>>>>>   Импорт стилей   <<<<<<<<<
-import './styles.css'
+import './style.scss'
 import { ContextMenu } from './menu';
 
 //>>>>>>>>   Импорт модулей   <<<<<<<<<

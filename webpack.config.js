@@ -49,10 +49,10 @@ module.exports = (env, argv) => {
     ],
     module: {
       rules: [
-        {
-          test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, "css-loader"],
-        },
+      {
+        test: /\.(scss|css)$/,
+          use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
