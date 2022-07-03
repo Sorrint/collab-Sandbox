@@ -3,15 +3,20 @@ import { Module } from './core/module';
 import { PARENT_HEIGHT, PARENT_WIDTH } from './modules/global';
 
 export class ContextMenu extends Menu {
+  #parent;
   constructor(selector) {
     super(selector);
     this.modules = [];
+    this.#parent = document.querySelector('.content');
+    this.#parent.addEventListener('contextmenu', (event) => {
+      event.preventDefault();
+      this.open();
+      this.setBorder(event);
+    });
   }
 
   setBorder(event) {
-    const menu = document.querySelector('.menu');
-    console.log(this.el);
-    const menuWidth = this.el.offsetWidth + 15;
+    const menuWidth = this.el.offsetWidth + 30;
     const menuHeight = this.el.offsetHeight + 4;
 
     PARENT_WIDTH - event.clientX < menuWidth
@@ -22,6 +27,26 @@ export class ContextMenu extends Menu {
       ? (this.el.style.top = `${PARENT_HEIGHT - menuHeight}px`)
       : (this.el.style.top = `${event.clientY}px`);
   }
+
+  #processTheClick(module) {
+    const selectedModule = this.el.querySelector(
+      `[data-type="${module.type}"]`
+    );
+
+    selectedModule.addEventListener('click', (event) => {
+      module.trigger();
+      this.close();
+      //   const previousContainer = document.querySelector('.active');
+      // //   if (previousContainer) {
+      // //     previousContainer.classList.remove('active');
+      // //   }
+      // //   const selectContainer = document.querySelector(
+      // //     `.${event.target.dataset.type}`
+      // //   );
+      // //   selectContainer.classList.add('active');
+    });
+  }
+
   open() {
     this.el.classList.add('open');
   }
@@ -32,8 +57,8 @@ export class ContextMenu extends Menu {
 
   add(module) {
     if (module instanceof Module) {
-      this.el.innerHTML += module.toHTML();
-      this.modules.push(module);
+      this.el.insertAdjacentHTML('beforeend', module.toHTML());
+      this.#processTheClick(module);
     }
   }
 }

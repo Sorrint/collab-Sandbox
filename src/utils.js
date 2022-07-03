@@ -1,11 +1,12 @@
 export function random(min, max) {
-  return Math.round(min - 0.5 + Math.random() * (max - min + 1))
+  return Math.round(min - 0.5 + Math.random() * (max - min + 1));
 }
 
 export function randomColor() {
-  const colors = ['#5776b9', '#d9051b', '#ffdb03', '#42a60b', '#fee610', '#fc614d', '#63bb43', '#71a9d8'];
-  const index = random(0, colors.length);
-  return colors[index];
+  const value1 = random(0, 255);
+  const value2 = random(0, 255);
+  const value3 = random(0, 255);
+  return `rgb(${value1}, ${value2}, ${value3})`;
 }
 
 export function addZero(number) {
@@ -19,7 +20,7 @@ export function addEventContainer(type) {
   const container = document.querySelector(`.${type}`);
   if (!container) {
     const eventContainer = document.createElement('div');
-    eventContainer.className = 'event-container';
+    eventContainer.className = 'event-container active';
     eventContainer.classList.add(type);
     document.body.append(eventContainer);
   }
