@@ -12,22 +12,19 @@ import { Soundmodule } from "./modules/sound.module";
 
 //>>>>>>>>   Создание меню   <<<<<<<<<
 const contextMenu = new ContextMenu("ul");
-const shapeModule = new ShapeModule("shape", "Создать фигуру");
-const timerModule = new TimerModule("timer", "Обратный отсчёт");
-const cMessageModule = new CustomMessage(
-  "custom-message",
-  "Кастомное сообщение"
-);
-const sound = new Soundmodule("sound", "Случайный звук");
-const clicks = new ClicksModule("click", "Счетчик кликов");
-const backgroundModule = new BackgroundModule("background", "Фон");
 
-contextMenu.add(timerModule);
-contextMenu.add(shapeModule);
-contextMenu.add(cMessageModule);
-contextMenu.add(sound);
-contextMenu.add(backgroundModule);
-contextMenu.add(clicks);
+const modules = [
+  new ShapeModule("shape", "Создать фигуру"),
+  new TimerModule("timer", "Обратный отсчёт"),
+  new CustomMessage("custom-message", "Кастомное сообщение"),
+  new Soundmodule("sound", "Случайный звук"),
+  new ClicksModule("click", "Счетчик кликов"),
+  new BackgroundModule("background", "Фон"),
+];
+
+for (let module of modules) {
+  contextMenu.add(module);
+}
 
 //>>>>>>>>   Отображение меню   <<<<<<<<<
 document.body.addEventListener("contextmenu", (event) => {
