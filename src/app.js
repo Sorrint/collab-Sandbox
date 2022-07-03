@@ -9,6 +9,7 @@ import { ShapeModule } from './modules/shape.module';
 import { CustomMessage } from './modules/custom_message.module';
 import { BackgroundModule } from './modules/background.module';
 import { Soundmodule } from './modules/sound.module';
+import { PARENT_HEIGHT, PARENT_WIDTH } from './modules/global';
 
 //>>>>>>>>   Создание меню   <<<<<<<<<
 const contextMenu = new ContextMenu('ul');
@@ -20,24 +21,11 @@ contextMenu.add(new ClicksModule('click', 'Счетчик кликов'));
 contextMenu.add(new BackgroundModule('background', 'Фон'));
 
 //>>>>>>>>   Отображение меню   <<<<<<<<<
-document.body.addEventListener('contextmenu', (event) => {
+const contentContainer = document.querySelector('.content');
+contentContainer.addEventListener('contextmenu', (event) => {
   event.preventDefault();
-  const windowHeight = document.documentElement.clientHeight;
-  const windowWidth = document.documentElement.clientWidth;
-
-  const menu = document.querySelector('.menu');
-
   contextMenu.open();
-  const menuWidth = menu.offsetWidth + 50;
-  const menuHeight = menu.offsetHeight + 4;
-
-  windowWidth - event.clientX < menuWidth
-    ? (contextMenu.el.style.left = `${windowWidth - menuWidth}px`)
-    : (contextMenu.el.style.left = `${event.clientX + 50}px`);
-
-  windowHeight - event.clientY < menuHeight
-    ? (contextMenu.el.style.top = `${windowHeight - menuHeight}px`)
-    : (contextMenu.el.style.top = `${event.clientY}px`);
+  contextMenu.setBorder(event);
 });
 
 //>>>>>>>>   Обработка выбранного пункта меню   <<<<<<<<<
