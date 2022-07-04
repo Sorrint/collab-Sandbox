@@ -2,14 +2,14 @@
   position: relative;
   width: 120px;
   height: 120px;
-  animation: 4s show ease;
+  animation: 4.5s show ease;
 }
 
-// @keyframes show {
-//   from {
-//     opacity: 1;
-//   }
-//   to {
-//     opacity: 0;
-//   }
-// }
+@keyframes show {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

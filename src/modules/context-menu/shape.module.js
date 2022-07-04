@@ -23,22 +23,17 @@ export class ShapeModule extends Module {
     svgContainer.innerHTML = randomShape();
     svgContainer.style.left = `${random(30, this.#width - 190)}px`;
     svgContainer.style.top = `${random(30, this.#height - 190)}px`;
-
-    const svg = svgContainer.querySelector('svg');
-    svg.setAttribute('fill', 'none');
-    svg.setAttribute('stroke-width', '2');
-    svg.setAttribute('stroke', `${color}`);
-    svg.setAttribute('stroke-linecap', 'butt');
-    svg.setAttribute('stroke-linejoin', 'bevel');
+    svgContainer.style.fill = randomColor();
+    svgContainer.style.stroke = randomColor();
 
     return eventContainer.append(svgContainer);
   }
 
   #autoRemove() {
     const svg = this.#body.querySelector(`.svg`);
-    // setTimeout(() => {
-    //   svg.remove();
-    // }, 4000);
+    setTimeout(() => {
+      svg.remove();
+    }, 4000);
   }
 
   #showFugure() {
