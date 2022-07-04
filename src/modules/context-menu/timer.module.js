@@ -49,7 +49,6 @@ export class TimerModule extends Module {
   }
 
   #renderUserInput() {
-    // this.#eventContainer.style.background = `black`;
     this.#userInput.className = 'user-input';
     this.#applyStyles(this.#userInput);
 
