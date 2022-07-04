@@ -1,3 +1,16 @@
+.timer-block {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.timer {
+  font-size: 60px;
+}
+
 .timer-text {
   align-items: center;
   margin: 0 auto;
@@ -5,7 +18,7 @@
 }
 
 .image-meme {
-  left: 10%;
+  // left: 10%;
   display: block;
 }
 
@@ -14,13 +27,15 @@
 }
 
 .user-input {
-  min-width: 400px;
-  padding: 0 2%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
   margin: 0 auto;
-  background-color: #343434;
+  padding: 0 2%;
+  margin-bottom: 40px;
+
+  min-width: 400px;
   width: 30%;
   height: 15vh;
   min-height: 80px;
@@ -28,12 +43,12 @@
   border-radius: 5px;
   text-align: center;
   color: white;
-  margin-bottom: 40px;
+  background-color: #343434;
 }
 
 .limit-message {
   display: block;
-  width: 450px;
+  // width: 450px;
   text-align: center;
   padding: 10px;
   height: 50px;
@@ -64,4 +79,14 @@
 
 .confirm {
   width: 30%;
+}
+
+.image-meme {
+  position: relative;
+  left: 50%;
+  display: block;
+}
+
+.hidden {
+  display: none;
 }

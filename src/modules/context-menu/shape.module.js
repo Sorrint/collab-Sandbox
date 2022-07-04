@@ -5,19 +5,14 @@ import { PARENT_HEIGHT, PARENT_WIDTH } from '../../global';
 
 export class ShapeModule extends Module {
   #body;
-  #width;
-  #height;
   constructor(type, text) {
     super(type, text);
     this.#body = document.querySelector('body');
-    this.#width = document.documentElement.clientWidth;
-    this.#height = document.documentElement.clientHeight;
   }
 
   #createFigure() {
     const eventContainer = this.#body.querySelector(`.${this.type}`);
     const svgContainer = document.createElement('div');
-    const color = randomColor();
 
     svgContainer.setAttribute('id', 'svg-container');
     svgContainer.className = 'svg';
@@ -31,7 +26,7 @@ export class ShapeModule extends Module {
   }
 
   #autoRemove() {
-    const svg = this.#body.querySelector(`.svg`);
+    const svg = this.#body.querySelector('.svg');
     setTimeout(() => {
       svg.remove();
     }, 4000);
