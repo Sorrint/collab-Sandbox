@@ -3,10 +3,11 @@ export function random(min, max) {
 }
 
 export function randomColor() {
+  const opacity = Math.round(Math.random() * 100) / 100;
   const value1 = random(0, 255);
   const value2 = random(0, 255);
   const value3 = random(0, 255);
-  return `rgba(${value1}, ${value2}, ${value3})`;
+  return `rgba(${value1}, ${value2}, ${value3}, ${opacity})`;
 }
 
 export function addZero(number) {
