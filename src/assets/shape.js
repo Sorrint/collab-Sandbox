@@ -1,4 +1,4 @@
-import {random} from "../utils";
+import { random } from '../modules/context-menu/utils';
 
 export const randomShape = () => {
   const arrayWithSvg = [
@@ -53,7 +53,7 @@ export const randomShape = () => {
     <path d="M30,76q6-14,13-26q6-12,14-23q8-12,13-17q3-4,6-6q1-1,5-2q8-1,12-1q1,0,1,1q0,1-1,2q-13,11-27,33q-14,21-24,44q-4,9-5,11q-1,2-9,2q-5,0-6-1q-1-1-5-6q-5-8-12-15q-3-4-3-6q0-2,4-5q3-2,6-2q3,0,8,3q5,4,10,14z" fill="green"/>
     </svg>`,
     ],
-    
+
     [
       `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
     <rect fill="#039" x="0" y="3" height="95" width="95" rx="15"/>

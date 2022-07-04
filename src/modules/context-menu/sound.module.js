@@ -1,5 +1,5 @@
 import { Module } from './core/module';
-import { addEventContainer } from '../../utils';
+import { addEventContainer } from './utils';
 
 export class Soundmodule extends Module {
   constructor(type, text) {

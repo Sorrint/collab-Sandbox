@@ -1,6 +1,6 @@
 import { Module } from './core/module';
 import { randomCity } from '../../assets/cities';
-import { addEventContainer } from '../../utils';
+import { addEventContainer } from './utils';
 
 export class CustomMessage extends Module {
   constructor(type, text) {

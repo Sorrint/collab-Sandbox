@@ -1,6 +1,6 @@
 import { Module } from './core/module';
 import { randomShape } from '../../assets/shape';
-import { addEventContainer, random } from '../../utils';
+import { addEventContainer, random } from './utils';
 
 export class ShapeModule extends Module {
   #body;
