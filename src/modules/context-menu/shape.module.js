@@ -1,7 +1,6 @@
-import { Module } from "../core/module";
-import { randomShape } from "../assets/shape";
-import { addEventContainer } from "../utils";
-import { random } from "../utils";
+import { Module } from './core/module';
+import { randomShape } from '../../assets/shape';
+import { addEventContainer, random } from '../../utils';
 
 export class ShapeModule extends Module {
   #body;
@@ -9,17 +8,17 @@ export class ShapeModule extends Module {
   #height;
   constructor(type, text) {
     super(type, text);
-    this.#body = document.querySelector("body");
+    this.#body = document.querySelector('body');
     this.#width = document.documentElement.clientWidth;
     this.#height = document.documentElement.clientHeight;
   }
 
   #createFigure() {
     const eventContainer = this.#body.querySelector(`.${this.type}`);
-    const svgContainer = document.createElement("div");
+    const svgContainer = document.createElement('div');
 
-    svgContainer.setAttribute("id", "svg-container");
-    svgContainer.className = "wrapper-svg  exmpl-svg ";
+    svgContainer.setAttribute('id', 'svg-container');
+    svgContainer.className = 'wrapper-svg  exmpl-svg ';
     svgContainer.innerHTML = randomShape();
     svgContainer.style.left = `${random(30, this.#width - 190)}px`;
     svgContainer.style.top = `${random(30, this.#height - 190)}px`;
@@ -35,7 +34,7 @@ export class ShapeModule extends Module {
   }
 
   #showFugure() {
-    const svgContainer = this.#body.querySelector("#svg-container");
+    const svgContainer = this.#body.querySelector('#svg-container');
     if (svgContainer) {
       svgContainer.remove();
       this.#createFigure();

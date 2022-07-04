@@ -1,9 +1,9 @@
 .menu {
   position: relative;
-  padding: 10px;
+  padding: 5px;
   position: fixed;
   z-index: 1000;
-  width: 250px;
+  width: 200px;
   border-radius: 10px;
   display: none;
   list-style: none;
@@ -15,7 +15,7 @@
 .menu:after {
   z-index: -1;
   position: absolute;
-  content: "";
+  content: '';
   top: -2vw;
   left: -10px;
   right: 0;
@@ -38,9 +38,9 @@
 
 .menu .menu-item {
   z-index: 100;
-  padding: 10px 0;
-  margin: 5px 0;
-  font-size: 1.5rem;
+  padding: 5px 2px;
+  margin: 3px 2px;
+  font-size: 1.3rem;
   color: #eee;
   cursor: pointer;
   transition: background-color 0.2s ease-in;
