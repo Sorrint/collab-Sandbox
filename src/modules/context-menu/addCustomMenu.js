@@ -6,7 +6,7 @@ import { ClicksModule } from './clicks.module';
 import { BackgroundModule } from './background.module';
 import { Soundmodule } from './sound.module';
 
-export const addCostomMenu = () => {
+export const addCustomMenu = () => {
   const contextMenu = new ContextMenu('ul');
   contextMenu.add(new ShapeModule('shape', 'Создать фигуру'));
   contextMenu.add(new TimerModule('timer', 'Обратный отсчёт'));
