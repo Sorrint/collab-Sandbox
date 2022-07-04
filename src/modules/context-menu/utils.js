@@ -18,11 +18,12 @@ export function addZero(number) {
 }
 
 export function addEventContainer(type) {
+  const content = document.querySelector('.content');
   const container = document.querySelector(`.${type}`);
   if (!container) {
-    const eventContainer = document.createElement('div');
-    eventContainer.className = 'event-container active';
-    eventContainer.classList.add(type);
-    document.body.append(eventContainer);
+    const wrapper = document.createElement('div');
+    wrapper.className = 'content__wrapper active';
+    wrapper.classList.add(type);
+    content.append(wrapper);
   }
 }
