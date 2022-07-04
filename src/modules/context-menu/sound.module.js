@@ -4,7 +4,7 @@ import { addEventContainer } from '../../utils';
 export class Soundmodule extends Module {
   constructor(type, text) {
     super(type, text);
-    this.logoHTML = document.createElement('logo');
+    this.logoHTML = document.createElement('logoSound');
     this.audioHTML = document.createElement('audio');
     this.textHint = document.createElement('span');
     this.soundContainer = document.createElement('div');
