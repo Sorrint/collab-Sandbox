@@ -8,8 +8,7 @@
   background-size: cover;
   background-color: rgb(62, 63, 61);
   background: url(https://camouf.ru/local/templates/mibazarov/components/bitrix/menu/aside_multimenu/derevo.jpg)
-    no-repeat;
-
+    35% 85% no-repeat;
   &__cover {
     display: flex;
     flex-direction: column;
@@ -22,7 +21,6 @@
 
   &__logo {
     flex: 0 1 auto;
-    opacity: 0.7;
     background-size: cover;
   }
 
