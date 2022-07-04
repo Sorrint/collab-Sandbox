@@ -1,15 +1,13 @@
-import { random } from "../utils";
+import { random } from '../modules/context-menu/utils';
 
-
-export function randomCity() { 
-
-    const worldCapitals = [
+export function randomCity() {
+  const worldCapitals = [
     'Kabul',
     'Tirana',
     'Algiers',
     'Andorra la Vella',
     'Luanda',
-    'Saint John\'s',
+    "Saint John's",
     'Buenos Aires',
     'Yerevan',
     'Canberra',
@@ -37,7 +35,7 @@ export function randomCity() {
     'Ottawa',
     'Praia',
     'Bangui',
-    'N\'Djamena',
+    "N'Djamena",
     'Santiago',
     'Beijing',
     'Bogota',
@@ -71,7 +69,7 @@ export function randomCity() {
     'Berlin',
     'Accra',
     'Athens',
-    'Saint George\'s',
+    "Saint George's",
     'Guatemala City',
     'Conakry',
     'Bissau',
@@ -180,7 +178,7 @@ export function randomCity() {
     'Dar es Salaam',
     'Bangkok',
     'Lome',
-    'Nuku\'alofa',
+    "Nuku'alofa",
     'Port-of-Spain',
     'Tunis',
     'Ankara',
@@ -202,7 +200,5 @@ export function randomCity() {
     'Harare',
   ];
 
-  return worldCapitals[random(0, worldCapitals.length - 1)]
-
-
+  return worldCapitals[random(0, worldCapitals.length - 1)];
 }

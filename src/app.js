@@ -1,4 +1,4 @@
-import { addCostomMenu } from './modules/context-menu/addCostomMenu';
+import { addCustomMenu } from './modules/context-menu/addCustomMenu';
 import './styles/styles.scss';
 
-addCostomMenu();
+addCustomMenu();

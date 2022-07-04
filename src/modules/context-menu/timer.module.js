@@ -1,5 +1,5 @@
 import { Module } from './core/module';
-import { addEventContainer, addZero, randomColor } from '../../utils';
+import { addEventContainer, addZero, randomColor } from './utils';
 import JS_MEME from '../../assets/meme1.jpg';
 
 export class TimerModule extends Module {
@@ -49,7 +49,6 @@ export class TimerModule extends Module {
   }
 
   #renderUserInput() {
-    this.#eventContainer.style.background = `black`;
     this.#userInput.className = 'user-input';
     this.#applyStyles(this.#userInput);
 

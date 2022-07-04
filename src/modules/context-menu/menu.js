@@ -36,14 +36,6 @@ export class ContextMenu extends Menu {
     selectedModule.addEventListener('click', (event) => {
       module.trigger();
       this.close();
-      //   const previousContainer = document.querySelector('.active');
-      // //   if (previousContainer) {
-      // //     previousContainer.classList.remove('active');
-      // //   }
-      // //   const selectContainer = document.querySelector(
-      // //     `.${event.target.dataset.type}`
-      // //   );
-      // //   selectContainer.classList.add('active');
     });
   }
 

@@ -3,11 +3,10 @@ export function random(min, max) {
 }
 
 export function randomColor() {
-  const opacity = Math.round(Math.random() * 100) / 100;
   const value1 = random(0, 255);
   const value2 = random(0, 255);
   const value3 = random(0, 255);
-  return `rgba(${value1}, ${value2}, ${value3}, ${opacity})`;
+  return `rgb(${value1}, ${value2}, ${value3})`;
 }
 
 export function addZero(number) {
@@ -18,11 +17,14 @@ export function addZero(number) {
 }
 
 export function addEventContainer(type) {
-  const container = document.querySelector(`.${type}`);
+  const content = document.querySelector('.content');
+  const container = document.querySelector(`.content__wrapper`);
   if (!container) {
-    const eventContainer = document.createElement('div');
-    eventContainer.className = 'event-container active';
-    eventContainer.classList.add(type);
-    document.body.append(eventContainer);
+    const wrapper = document.createElement('div');
+    wrapper.className = 'content__wrapper';
+    wrapper.classList.add(type);
+    content.append(wrapper);
+  } else {
+    container.classList.add(type);
   }
 }

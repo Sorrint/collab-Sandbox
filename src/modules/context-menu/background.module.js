@@ -1,5 +1,5 @@
 import { Module } from './core/module';
-import { random } from '../../utils';
+import { random } from './utils';
 
 export class BackgroundModule extends Module {
   #content;

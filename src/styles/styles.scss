@@ -130,34 +130,23 @@ h6 {
   font-style: normal;
 }
 
-body,
-.event-container {
-  font-size: 14px;
-  width: 100%;
-  background-color: #1d212b;
-  color: white;
-}
-
-.event-container {
-  padding: 2rem;
-  display: none;
-}
-
-.active {
-  display: block;
-}
-
 .body {
-  font-family: 'PFDinTextCondPro medium';
   display: flex;
+  background-color: #1d212b;
+  font-family: 'PFDinTextCondPro medium';
 
   &__sidebar {
     display: flex;
     flex-direction: column;
     flex: 0 1 250px;
   }
+
   &__content {
+    display: flex;
+    justify-content: center;
     flex: 1 1 auto;
+    position: relative;
+    overflow: hidden;
   }
 }
 
