@@ -1,5 +1,5 @@
-import { Module } from './core/module';
-import { addEventContainer, randomColor } from './utils';
+import { Module } from '../core/module';
+import { addEventContainer, randomColor } from '../utils';
 
 export class ClicksModule extends Module {
   constructor(type, text) {

@@ -1,5 +1,5 @@
-import { Module } from './core/module';
-import { addEventContainer } from './utils';
+import { Module } from '../core/module';
+import { addEventContainer } from '../utils';
 
 export class Soundmodule extends Module {
   constructor(type, text) {
@@ -26,7 +26,7 @@ export class Soundmodule extends Module {
     }
 
     let random = Math.floor(Math.random() * 5 + 1);
-    this.audioHTML.src = `src/assets/sound/${random}.mp3`;
+    this.audioHTML.src = `src/modules/context-menu/assets/sound/${random}.mp3`;
     this.audioHTML.className = 'audio';
     this.audioHTML.setAttribute('controls', '');
     this.audioHTML.setAttribute('autoplay', '');

@@ -1,6 +1,6 @@
-import { random } from '../modules/context-menu/utils';
+import { random } from '../utils';
 
-export function randomCity() {
+export function citiesData() {
   const worldCapitals = [
     'Kabul',
     'Tirana',

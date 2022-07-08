@@ -1,7 +1,7 @@
-import { Module } from './core/module';
-import { randomShape } from '../../assets/shape';
-import { addEventContainer, random, randomColor } from './utils';
-import { PARENT_HEIGHT, PARENT_WIDTH } from '../../global';
+import { Module } from '../core/module';
+import { shapeData } from '../assets/shapeData';
+import { addEventContainer, random, randomColor } from '../utils';
+import { PARENT_HEIGHT, PARENT_WIDTH } from '../../../global';
 
 export class ShapeModule extends Module {
   #body;
@@ -16,7 +16,7 @@ export class ShapeModule extends Module {
 
     svgContainer.setAttribute('id', 'svg-container');
     svgContainer.className = 'svg';
-    svgContainer.innerHTML = randomShape();
+    svgContainer.innerHTML = shapeData();
     svgContainer.style.left = `${random(30, PARENT_WIDTH - 400)}px`;
     svgContainer.style.top = `${random(30, PARENT_HEIGHT - 300)}px`;
     svgContainer.style.fill = randomColor();
