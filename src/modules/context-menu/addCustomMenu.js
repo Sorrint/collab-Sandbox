@@ -1,10 +1,10 @@
 import { ContextMenu } from './menu';
-import { ShapeModule } from './shape.module';
-import { TimerModule } from './timer.module';
-import { CustomMessage } from './custom_message.module';
-import { ClicksModule } from './clicks.module';
-import { BackgroundModule } from './background.module';
-import { Soundmodule } from './sound.module';
+import { ShapeModule } from './module/shape.module';
+import { TimerModule } from './module/timer.module';
+import { CustomMessage } from './module/custom_message.module';
+import { ClicksModule } from './module/clicks.module';
+import { BackgroundModule } from './module/background.module';
+import { Soundmodule } from './module/sound.module';
 
 export const addCustomMenu = () => {
   const contextMenu = new ContextMenu('ul');

@@ -1,6 +1,6 @@
-import { random } from '../modules/context-menu/utils';
+import { random } from '../utils';
 
-export const randomShape = () => {
+export const shapeData = () => {
   const arrayWithSvg = [
     [
       `    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-52 -53 100 100" stroke-width="2">
