@@ -1,6 +1,6 @@
 import { Module } from '../core/module';
 import { shapeData } from '../assets/shapeData';
-import { addEventContainer, random, randomColor } from '../utils';
+import { random, randomColor } from '../utils';
 import { PARENT_HEIGHT, PARENT_WIDTH } from '../../../global';
 
 export class ShapeModule extends Module {
@@ -11,7 +11,7 @@ export class ShapeModule extends Module {
   }
 
   #createFigure() {
-    const eventContainer = this.#body.querySelector(`.${this.type}`);
+    const wrapper = this.#body.querySelector(`.content__wrapper`);
     const svgContainer = document.createElement('div');
 
     svgContainer.setAttribute('id', 'svg-container');
@@ -22,7 +22,7 @@ export class ShapeModule extends Module {
     svgContainer.style.fill = randomColor();
     svgContainer.style.stroke = randomColor();
 
-    return eventContainer.append(svgContainer);
+    return wrapper.append(svgContainer);
   }
 
   #autoRemove() {
@@ -43,7 +43,6 @@ export class ShapeModule extends Module {
   }
 
   trigger() {
-    addEventContainer(this.type);
     this.#showFugure();
     this.#autoRemove();
   }
