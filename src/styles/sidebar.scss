@@ -1,5 +1,5 @@
 .sidebar {
-  font-family: 'ROBOTO';
+  font-family: "ROBOTO";
   color: white;
   font-size: 14px;
   font-weight: 600;
@@ -7,14 +7,14 @@
   border: 1px solid black;
   background-size: cover;
   background-color: rgb(62, 63, 61);
-  background: url(https://camouf.ru/local/templates/mibazarov/components/bitrix/menu/aside_multimenu/derevo.jpg)
-    35% 85% no-repeat;
+  background: url(https://camouf.ru/local/templates/mibazarov/components/bitrix/menu/aside_multimenu/derevo.jpg) 35%
+    100% no-repeat;
   &__cover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    height: 100%;
+    height: 100vh;
 
     background: rgba(25, 26, 25, 0.5);
   }
@@ -38,7 +38,7 @@
     justify-content: space-between;
 
     height: 130px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     padding: 23px 0 0 30px;
   }
 
@@ -78,7 +78,7 @@
 
   &__element span::after {
     margin-top: 5px;
-    content: '';
+    content: "";
     width: 0px;
     height: 3px;
     background-color: aliceblue;
@@ -91,7 +91,7 @@
   }
 
   &__element.active span::after {
-    content: '';
+    content: "";
     display: block;
     width: 40px;
     height: 3px;
