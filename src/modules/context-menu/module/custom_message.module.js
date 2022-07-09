@@ -14,6 +14,7 @@ export class CustomMessage extends Module {
       const timer = this.#body.querySelector('.user-input');
       const click = this.#body.querySelector('.count-numbers');
       const sound = this.#body.querySelector('.logo');
+
       const W_URL = `https://api.openweathermap.org/data/2.5/weather?q=${citiesData()}&appid=3574141fd05c9364f6d45f88f3898d1d&units=metric`;
 
       const response = await fetch(W_URL);
