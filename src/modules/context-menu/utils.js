@@ -25,6 +25,7 @@ export function addEventContainer(type) {
     wrapper.classList.add(type);
     content.append(wrapper);
   } else {
+    // container.innerHTML = ``;
     container.classList.add(type);
   }
 }
