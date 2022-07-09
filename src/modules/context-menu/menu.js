@@ -33,7 +33,7 @@ export class ContextMenu extends Menu {
       `[data-type="${module.type}"]`
     );
 
-    selectedModule.addEventListener('click', (event) => {
+    selectedModule.addEventListener('click', () => {
       module.trigger();
       this.close();
     });

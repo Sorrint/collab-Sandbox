@@ -19,6 +19,7 @@ export class Soundmodule extends Module {
   trigger() {
     addEventContainer(this.type);
     const eventContainer = document.querySelector(`.${this.type}`);
+
     let context, analyser, src, array;
     const hasLogo = document.querySelector('.logoSound');
     if (hasLogo) {
