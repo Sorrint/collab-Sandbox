@@ -16,6 +16,8 @@ export class TimerModule extends Module {
   #decreaseTimer;
   #confirmButton;
   #body;
+  #intervalID;
+
   constructor(type, text) {
     super(type, text);
     this.#timerText = document.createElement('span');
@@ -31,27 +33,34 @@ export class TimerModule extends Module {
     this.#decreaseTimer = document.createElement('div');
     this.#confirmButton = document.createElement('div');
     this.#body = document.querySelector('body');
+    this.#intervalID = 0;
   }
 
   trigger() {
+    clearInterval(this.#intervalID);
     this.#wrapper = this.#body.querySelector('.content__wrapper');
     const timer = this.#body.querySelector('.user-input');
     const message = this.#body.querySelector('.weather-block');
     const click = this.#body.querySelector('.count-numbers');
     const sound = this.#body.querySelector('.logo');
+    const image = this.#body.querySelector('.image-meme');
 
-    if (timer || message || click || sound) {
+    if (timer || message || click || sound || image) {
       this.#wrapper.innerHTML = '';
+      this.#image.remove();
       this.#userInput.remove();
       this.#confirmButton.remove();
+      this.#image = document.createElement('img');
       this.#confirmButton = document.createElement('div');
       this.#userInput = document.createElement('div');
       this.#renderUserInput();
     } else {
       this.#userInput.remove();
+      this.#image.remove();
       this.#confirmButton.remove();
       this.#confirmButton = document.createElement('div');
       this.#userInput = document.createElement('div');
+      this.#image = document.createElement('img');
       this.#renderUserInput();
     }
   }
@@ -141,9 +150,9 @@ export class TimerModule extends Module {
 
   #decreaseTime() {
     this.#image.classList.add('hidden');
-    let time = setInterval(() => {
+    this.#intervalID = setInterval(() => {
       if (this.#seconds <= 0) {
-        clearInterval(time);
+        clearInterval(this.#intervalID);
         console.log('завершено');
         this.#image.classList.remove('hidden');
         this.#timerText.textContent = 'time is up';
