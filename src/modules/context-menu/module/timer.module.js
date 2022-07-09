@@ -15,7 +15,6 @@ export class TimerModule extends Module {
   #increaseTimer;
   #decreaseTimer;
   #confirmButton;
-  #body;
   constructor(type, text) {
     super(type, text);
     this.#timerText = document.createElement('span');
@@ -30,30 +29,16 @@ export class TimerModule extends Module {
     this.#increaseTimer = document.createElement('div');
     this.#decreaseTimer = document.createElement('div');
     this.#confirmButton = document.createElement('div');
-    this.#body = document.querySelector('body');
   }
 
   trigger() {
-    this.#wrapper = this.#body.querySelector('.content__wrapper');
-    const timer = this.#body.querySelector('.user-input');
-    const message = this.#body.querySelector('.weather-block');
-    const click = this.#body.querySelector('.count-numbers');
-    const sound = this.#body.querySelector('.logo');
+    this.#wrapper = document.querySelector('.content__wrapper');
 
-    if (timer || message || click || sound) {
-      this.#wrapper.innerHTML = '';
-      this.#userInput.remove();
-      this.#confirmButton.remove();
-      this.#confirmButton = document.createElement('div');
-      this.#userInput = document.createElement('div');
-      this.#renderUserInput();
-    } else {
-      this.#userInput.remove();
-      this.#confirmButton.remove();
-      this.#confirmButton = document.createElement('div');
-      this.#userInput = document.createElement('div');
-      this.#renderUserInput();
-    }
+    this.#userInput.remove();
+    this.#confirmButton.remove();
+    this.#confirmButton = document.createElement('div');
+    this.#userInput = document.createElement('div');
+    this.#renderUserInput();
   }
 
   #renderUserInput() {
@@ -144,7 +129,7 @@ export class TimerModule extends Module {
     let time = setInterval(() => {
       if (this.#seconds <= 0) {
         clearInterval(time);
-        console.log('завершено');
+
         this.#image.classList.remove('hidden');
         this.#timerText.textContent = 'time is up';
       } else {

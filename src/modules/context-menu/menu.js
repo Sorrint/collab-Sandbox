@@ -3,11 +3,13 @@ import { Module } from './core/module';
 import { PARENT_HEIGHT, PARENT_WIDTH } from '../../global';
 
 export class ContextMenu extends Menu {
+  #body;
   #parent;
   constructor(selector) {
     super(selector);
     this.modules = [];
-    this.#parent = document.querySelector('.content');
+    this.#body = document.querySelector('body');
+    this.#parent = this.#body.querySelector('.content');
     this.#parent.addEventListener('contextmenu', (event) => {
       event.preventDefault();
       this.open();
@@ -34,8 +36,20 @@ export class ContextMenu extends Menu {
     );
 
     selectedModule.addEventListener('click', () => {
-      module.trigger();
-      this.close();
+      const wrapper = this.#body.querySelector('.content__wrapper');
+      const timer = this.#body.querySelector('.user-input');
+      const message = this.#body.querySelector('.weather-block');
+      const click = this.#body.querySelector('.count-numbers');
+      const sound = this.#body.querySelector('.logo');
+
+      if (timer || message || click || sound) {
+        wrapper.innerHTML = '';
+        module.trigger();
+        this.close();
+      } else {
+        module.trigger();
+        this.close();
+      }
     });
   }
 

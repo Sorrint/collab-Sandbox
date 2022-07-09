@@ -2,10 +2,8 @@ import { Module } from '../core/module';
 import { randomColor } from '../utils';
 
 export class ClicksModule extends Module {
-  #body;
   constructor(type, text) {
     super(type, text);
-    this.#body = document.querySelector('body');
     /* Секция сыграем в игру */
     this.countNumbers = document.createElement('section'); //count-numbers
     this.countNumbersContainer = document.createElement('div'); //count-numbers container
@@ -49,36 +47,16 @@ export class ClicksModule extends Module {
   }
 
   trigger() {
-    const wrapper = this.#body.querySelector('.content__wrapper');
-    const timer = this.#body.querySelector('.user-input');
-    const message = this.#body.querySelector('.weather-block');
-    const click = this.#body.querySelector('.count-numbers');
-    const sound = this.#body.querySelector('.logo');
-
-    if (timer || message || click || sound) {
-      wrapper.innerHTML = '';
-      this.render();
-      this.buttonsAnimated();
-      this.hideFirst();
-      this.hideSecond();
-      this.clickCount;
-      this.colored();
-      this.timer;
-      this.gameStart();
-      this.resetDom();
-      this.repeatGame();
-    } else {
-      this.render();
-      this.buttonsAnimated();
-      this.hideFirst();
-      this.hideSecond();
-      this.clickCount;
-      this.colored();
-      this.timer;
-      this.gameStart();
-      this.resetDom();
-      this.repeatGame();
-    }
+    this.render();
+    this.buttonsAnimated();
+    this.hideFirst();
+    this.hideSecond();
+    this.clickCount;
+    this.colored();
+    this.timer;
+    this.gameStart();
+    this.resetDom();
+    this.repeatGame();
   }
 
   render() {

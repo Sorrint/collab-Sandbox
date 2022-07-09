@@ -7,7 +7,6 @@ export class Soundmodule extends Module {
   #audioHTML;
   #textHint;
   #soundContainer;
-  #body;
 
   constructor(type, text) {
     super(type, text);
@@ -15,15 +14,10 @@ export class Soundmodule extends Module {
     this.#audioHTML = document.createElement('audio');
     this.#textHint = document.createElement('span');
     this.#soundContainer = document.createElement('div');
-    this.#body = document.querySelector('body');
   }
 
   trigger() {
-    const wrapper = this.#body.querySelector('.content__wrapper');
-    const timer = this.#body.querySelector('.user-input');
-    const message = this.#body.querySelector('.weather-block');
-    const click = this.#body.querySelector('.count-numbers');
-    const sound = this.#body.querySelector('.logo');
+    const wrapper = document.querySelector('.content__wrapper');
 
     let context, analyser, src, array;
     const hasLogo = document.querySelector('.logoSound');
@@ -51,12 +45,7 @@ export class Soundmodule extends Module {
 
     this.#soundContainer.prepend(this.#logoHTML);
 
-    if (timer || message || click || sound) {
-      wrapper.innerHTML = '';
-      wrapper.append(this.#textHint, this.#soundContainer, this.#audioHTML);
-    } else {
-      wrapper.append(this.#textHint, this.#soundContainer, this.#audioHTML);
-    }
+    wrapper.append(this.#textHint, this.#soundContainer, this.#audioHTML);
 
     let logoStyle = document.querySelector('.logoSound').style;
 
