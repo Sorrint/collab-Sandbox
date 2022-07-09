@@ -1,70 +1,68 @@
 import { Module } from '../core/module';
+import { addEventContainer, random } from '../utils';
+import { soundData } from '../assets/soundData';
 
 export class Soundmodule extends Module {
-  #body;
+  #logoHTML;
+  #audioHTML;
+  #textHint;
+  #soundContainer;
+
   constructor(type, text) {
     super(type, text);
-    this.logoHTML = document.createElement('logoSound');
-    this.audioHTML = document.createElement('audio');
-    this.textHint = document.createElement('span');
-    this.soundContainer = document.createElement('div');
-    this.#body = document.querySelector('body');
+    this.#logoHTML = document.createElement('div');
+    this.#audioHTML = document.createElement('audio');
+    this.#textHint = document.createElement('span');
+    this.#soundContainer = document.createElement('div');
   }
 
   trigger() {
-    const wrapper = this.#body.querySelector('.content__wrapper');
-    const timer = this.#body.querySelector('.user-input');
-    const message = this.#body.querySelector('.weather-block');
-    const click = this.#body.querySelector('.count-numbers');
-    const sound = this.#body.querySelector('.logo');
+    addEventContainer(this.type);
+    const eventContainer = document.querySelector(`.${this.type}`);
 
     let context, analyser, src, array;
-    const hasLogo = document.querySelector('.logo');
+    const hasLogo = document.querySelector('.logoSound');
     if (hasLogo) {
-      this.logoHTML.remove();
-      this.audioHTML.remove();
-      this.textHint.remove();
-      this.textHint = document.createElement('div');
-      this.logoHTML = document.createElement('logo');
-      this.audioHTML = document.createElement('audio');
+      this.#logoHTML.remove();
+      this.#audioHTML.remove();
+      this.#textHint.remove();
+      this.#textHint = document.createElement('div');
+      this.#logoHTML = document.createElement('div');
+      this.#audioHTML = document.createElement('audio');
     }
 
-    let random = Math.floor(Math.random() * 5 + 1);
-    this.audioHTML.src = `src/modules/context-menu/assets/sound/${random}.mp3`;
-    this.audioHTML.className = 'audio';
-    this.audioHTML.setAttribute('controls', '');
-    this.audioHTML.setAttribute('autoplay', '');
-    this.audioHTML.volume = 0.3;
+    let trackNumber = random(1, 5);
+    this.#audioHTML.src = `src/modules/context-menu/assets/sound/${trackNumber}.mp3`;
+    this.#audioHTML.className = 'audio';
+    this.#audioHTML.setAttribute('controls', '');
+    this.#audioHTML.setAttribute('autoplay', '');
+    this.#audioHTML.volume = 0.3;
 
-    this.logoHTML.className = 'logo';
+    this.#logoHTML.className = 'logoSound';
+    this.#soundContainer.className = 'soundContainer';
 
-    this.soundContainer.style.display = 'flex';
-    this.soundContainer.style.justifyContent = 'center';
+    this.#textHint.className = 'soundHint';
+    this.#textHint.textContent = soundData[trackNumber - 1].trackName;
 
-    this.textHint.style.display = 'block';
-    this.textHint.style.position = 'relative';
-    this.textHint.style.textAlign = 'center';
-    this.textHint.style.fontSize = '30px';
-    this.textHint.style.marginBottom = '50px';
-    this.textHint.textContent = 'Клик по кругу запустит анимацию';
+    this.#soundContainer.prepend(this.#logoHTML);
+    eventContainer.append(
+      this.#textHint,
+      this.#soundContainer,
+      this.#audioHTML
+    );
 
-    this.soundContainer.prepend(this.audioHTML, this.logoHTML);
-
-    if (timer || message || click || sound) {
-      wrapper.innerHTML = '';
-      wrapper.append(this.textHint, this.soundContainer);
-    } else {
-      wrapper.append(this.textHint, this.soundContainer);
-    }
-
-    let logo = document.querySelector('.logo').style;
+    let logoStyle = document.querySelector('.logoSound').style;
 
     let audio = document.querySelector('.audio');
 
-    this.logoHTML.addEventListener('mouseover', function () {
+    setTimeout(() => {
       if (!context) {
         preparation();
       }
+    }, 1000);
+
+    this.#audioHTML.addEventListener('mouseout', () => {
+      loop();
     });
 
     function preparation() {
@@ -82,9 +80,8 @@ export class Soundmodule extends Module {
       }
       array = new Uint8Array(analyser.frequencyBinCount);
       analyser.getByteFrequencyData(array);
-
-      logo.minHeight = array[40] + 'px';
-      logo.width = array[40] + 'px';
+      logoStyle.minHeight = array[40] + 'px';
+      logoStyle.width = array[40] + 'px';
     }
   }
 }
