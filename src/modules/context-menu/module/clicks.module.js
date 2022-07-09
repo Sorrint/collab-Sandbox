@@ -53,8 +53,9 @@ export class ClicksModule extends Module {
     const timer = this.#body.querySelector('.user-input');
     const message = this.#body.querySelector('.weather-block');
     const click = this.#body.querySelector('.count-numbers');
+    const sound = this.#body.querySelector('.logo');
 
-    if (timer || message || click) {
+    if (timer || message || click || sound) {
       wrapper.innerHTML = '';
       this.render();
       this.buttonsAnimated();

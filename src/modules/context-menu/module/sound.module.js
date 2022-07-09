@@ -16,6 +16,7 @@ export class Soundmodule extends Module {
     const timer = this.#body.querySelector('.user-input');
     const message = this.#body.querySelector('.weather-block');
     const click = this.#body.querySelector('.count-numbers');
+    const sound = this.#body.querySelector('.logo');
 
     let context, analyser, src, array;
     const hasLogo = document.querySelector('.logo');
@@ -49,7 +50,12 @@ export class Soundmodule extends Module {
 
     this.soundContainer.prepend(this.audioHTML, this.logoHTML);
 
-    wrapper.append(this.textHint, this.soundContainer);
+    if (timer || message || click || sound) {
+      wrapper.innerHTML = '';
+      wrapper.append(this.textHint, this.soundContainer);
+    } else {
+      wrapper.append(this.textHint, this.soundContainer);
+    }
 
     let logo = document.querySelector('.logo').style;
 
