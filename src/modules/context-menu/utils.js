@@ -15,16 +15,3 @@ export function addZero(number) {
   }
   return number;
 }
-
-export function addEventContainer(type) {
-  const content = document.querySelector('.content');
-  const container = document.querySelector(`.content__wrapper`);
-  if (!container) {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'content__wrapper';
-    wrapper.classList.add(type);
-    content.append(wrapper);
-  } else {
-    container.classList.add(type);
-  }
-}

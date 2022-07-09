@@ -1,18 +1,21 @@
 import { Module } from '../core/module';
-import { addEventContainer } from '../utils';
 
 export class Soundmodule extends Module {
+  #body;
   constructor(type, text) {
     super(type, text);
     this.logoHTML = document.createElement('logoSound');
     this.audioHTML = document.createElement('audio');
     this.textHint = document.createElement('span');
     this.soundContainer = document.createElement('div');
+    this.#body = document.querySelector('body');
   }
 
   trigger() {
-    addEventContainer(this.type);
-    const eventContainer = document.querySelector(`.${this.type}`);
+    const wrapper = this.#body.querySelector('.content__wrapper');
+    const timer = this.#body.querySelector('.user-input');
+    const message = this.#body.querySelector('.weather-block');
+    const click = this.#body.querySelector('.count-numbers');
 
     let context, analyser, src, array;
     const hasLogo = document.querySelector('.logo');
@@ -45,7 +48,8 @@ export class Soundmodule extends Module {
     this.textHint.textContent = 'Клик по кругу запустит анимацию';
 
     this.soundContainer.prepend(this.audioHTML, this.logoHTML);
-    eventContainer.append(this.textHint, this.soundContainer);
+
+    wrapper.append(this.textHint, this.soundContainer);
 
     let logo = document.querySelector('.logo').style;
 

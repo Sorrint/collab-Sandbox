@@ -1,10 +1,11 @@
 import { Module } from '../core/module';
-import { addEventContainer, randomColor } from '../utils';
+import { randomColor } from '../utils';
 
 export class ClicksModule extends Module {
+  #body;
   constructor(type, text) {
     super(type, text);
-
+    this.#body = document.querySelector('body');
     /* Секция сыграем в игру */
     this.countNumbers = document.createElement('section'); //count-numbers
     this.countNumbersContainer = document.createElement('div'); //count-numbers container
@@ -48,14 +49,24 @@ export class ClicksModule extends Module {
   }
 
   trigger() {
-    addEventContainer(this.type);
-    const eventContainer = document.querySelector(`.${this.type}`);
-    const isRun = document.querySelector('.timer');
-    if (isRun && isRun.textContent === '0') {
-      eventContainer.innerHTML = '';
-    }
+    const wrapper = this.#body.querySelector('.content__wrapper');
+    const timer = this.#body.querySelector('.user-input');
+    const message = this.#body.querySelector('.weather-block');
+    const click = this.#body.querySelector('.count-numbers');
 
-    if (!isRun || eventContainer.innerHTML === '') {
+    if (timer || message || click) {
+      wrapper.innerHTML = '';
+      this.render();
+      this.buttonsAnimated();
+      this.hideFirst();
+      this.hideSecond();
+      this.clickCount;
+      this.colored();
+      this.timer;
+      this.gameStart();
+      this.resetDom();
+      this.repeatGame();
+    } else {
       this.render();
       this.buttonsAnimated();
       this.hideFirst();
@@ -70,7 +81,7 @@ export class ClicksModule extends Module {
   }
 
   render() {
-    const eventContainer = document.querySelector(`.${this.type}`);
+    const wrapper = document.querySelector(`.content__wrapper`);
     /* Секция сыграем в игру */
     this.countNumbers.className = 'count-numbers';
     this.countNumbersContainer.className = 'count-container container';
@@ -161,7 +172,7 @@ export class ClicksModule extends Module {
 
     /* Добавляем в DOM */
 
-    eventContainer.append(
+    wrapper.append(
       this.countNumbers,
       this.description,
       this.block,

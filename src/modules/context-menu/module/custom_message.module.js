@@ -1,6 +1,5 @@
 import { Module } from '../core/module';
 import { citiesData } from '../assets/citiesData';
-import { addEventContainer } from '../utils';
 
 export class CustomMessage extends Module {
   constructor(type, text) {
@@ -9,8 +8,7 @@ export class CustomMessage extends Module {
 
   async trigger() {
     try {
-      addEventContainer(this.type);
-      const eventContainer = document.querySelector(`.${this.type}`);
+      const wrapper = document.querySelector('.content__wrapper');
       const W_URL = `https://api.openweathermap.org/data/2.5/weather?q=${citiesData()}&appid=3574141fd05c9364f6d45f88f3898d1d&units=metric`;
 
       const response = await fetch(W_URL);
@@ -41,7 +39,7 @@ export class CustomMessage extends Module {
 
       iconAndTempBlock.append(weatherIcon, tempPara);
       weatherBlock.append(weatherH2, iconAndTempBlock, weatherDescription);
-      eventContainer.prepend(weatherBlock);
+      wrapper.prepend(weatherBlock);
 
       setTimeout(() => {
         weatherBlock.remove();

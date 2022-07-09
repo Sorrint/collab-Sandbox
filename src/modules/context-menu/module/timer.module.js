@@ -1,5 +1,5 @@
 import { Module } from '../core/module';
-import { addEventContainer, addZero, randomColor } from '../utils';
+import { addZero, randomColor } from '../utils';
 import JS_MEME from '../assets/meme1.jpg';
 
 export class TimerModule extends Module {
@@ -11,11 +11,11 @@ export class TimerModule extends Module {
   #userInput;
   #limitMessage;
   #timerSpan;
-  #eventContainer;
+  #wrapper;
   #increaseTimer;
   #decreaseTimer;
   #confirmButton;
-
+  #body;
   constructor(type, text) {
     super(type, text);
     this.#timerText = document.createElement('span');
@@ -26,20 +26,27 @@ export class TimerModule extends Module {
     this.#image = document.createElement('img');
     this.#limitMessage = document.createElement('span');
     this.#timerSpan = document.createElement('span');
-    this.#eventContainer;
+    this.#wrapper;
     this.#increaseTimer = document.createElement('div');
     this.#decreaseTimer = document.createElement('div');
     this.#confirmButton = document.createElement('div');
+    this.#body = document.querySelector('body');
   }
 
   trigger() {
-    const hasUserInput = document.querySelector('.user-input');
-    if (!this.#eventContainer) {
-      addEventContainer(this.type);
-      this.#eventContainer = document.querySelector(`.${this.type}`);
-    }
+    this.#wrapper = this.#body.querySelector('.content__wrapper');
+    const timer = this.#body.querySelector('.user-input');
+    const message = this.#body.querySelector('.weather-block');
+    const click = this.#body.querySelector('.count-numbers');
 
-    if (!hasUserInput || this.#timerText.textContent === 'time is up') {
+    if (timer || message || click) {
+      this.#wrapper.innerHTML = '';
+      this.#userInput.remove();
+      this.#confirmButton.remove();
+      this.#confirmButton = document.createElement('div');
+      this.#userInput = document.createElement('div');
+      this.#renderUserInput();
+    } else {
       this.#userInput.remove();
       this.#confirmButton.remove();
       this.#confirmButton = document.createElement('div');
@@ -82,11 +89,7 @@ export class TimerModule extends Module {
       this.#decreaseTimer,
       this.#confirmButton
     );
-    this.#eventContainer.append(
-      this.#userInput,
-      this.#image,
-      this.#limitMessage
-    );
+    this.#wrapper.append(this.#userInput, this.#image, this.#limitMessage);
     this.#confirmButton.addEventListener(
       'click',
       () => {
