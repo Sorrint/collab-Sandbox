@@ -15,6 +15,8 @@ export class TimerModule extends Module {
   #increaseTimer;
   #decreaseTimer;
   #confirmButton;
+  #intervalID;
+
   constructor(type, text) {
     super(type, text);
     this.#timerText = document.createElement('span');
@@ -33,12 +35,13 @@ export class TimerModule extends Module {
 
   trigger() {
     this.#wrapper = document.querySelector('.content__wrapper');
-
+    clearInterval(this.#intervalID);
     this.#userInput.remove();
     this.#confirmButton.remove();
     this.#confirmButton = document.createElement('div');
     this.#userInput = document.createElement('div');
     this.#renderUserInput();
+    this.#intervalID = 0;
   }
 
   #renderUserInput() {
@@ -126,10 +129,9 @@ export class TimerModule extends Module {
 
   #decreaseTime() {
     this.#image.classList.add('hidden');
-    let time = setInterval(() => {
+    this.#intervalID = setInterval(() => {
       if (this.#seconds <= 0) {
-        clearInterval(time);
-
+        clearInterval(this.#intervalID);
         this.#image.classList.remove('hidden');
         this.#timerText.textContent = 'time is up';
       } else {
