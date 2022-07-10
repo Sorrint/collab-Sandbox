@@ -46,9 +46,9 @@ export class CustomMessage extends Module {
       wrapper.prepend(weatherBlock);
       wrapper.classList.add(`${this.type}`);
 
-      // setTimeout(() => {
-      //   weatherBlock.remove();
-      // }, 5000);
+      setTimeout(() => {
+        weatherBlock.remove();
+      }, 5000);
     } catch (error) {
       console.error('Произошла ошибка в получении данных...');
     } finally {
