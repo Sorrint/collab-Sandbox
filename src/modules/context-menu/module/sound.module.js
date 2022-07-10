@@ -20,15 +20,7 @@ export class Soundmodule extends Module {
     const wrapper = document.querySelector('.content__wrapper');
 
     let context, analyser, src, array;
-    const hasLogo = document.querySelector('.logoSound');
-    if (hasLogo) {
-      this.#logoHTML.remove();
-      this.#audioHTML.remove();
-      this.#textHint.remove();
-      this.#textHint = document.createElement('div');
-      this.#logoHTML = document.createElement('div');
-      this.#audioHTML = document.createElement('audio');
-    }
+    this.close();
 
     let trackNumber = random(1, 5);
     this.#audioHTML.src = `src/modules/context-menu/assets/sound/${trackNumber}.mp3`;
@@ -79,5 +71,15 @@ export class Soundmodule extends Module {
       logoStyle.minHeight = array[40] + 'px';
       logoStyle.width = array[40] + 'px';
     }
+  }
+  close() {
+    this.#logoHTML.remove();
+    this.#audioHTML.remove();
+    this.#textHint.remove();
+    this.#soundContainer.remove();
+    this.#textHint = document.createElement('div');
+    this.#soundContainer = document.createElement('div');
+    this.#logoHTML = document.createElement('div');
+    this.#audioHTML = document.createElement('audio');
   }
 }

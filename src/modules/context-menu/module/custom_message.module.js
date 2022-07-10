@@ -49,4 +49,9 @@ export class CustomMessage extends Module {
     } finally {
     }
   }
+
+  close() {
+    const elements = document.querySelectorAll('.weather-block');
+    elements.forEach((element) => element.remove());
+  }
 }
