@@ -34,14 +34,8 @@ export class TimerModule extends Module {
   }
 
   trigger() {
-    // this.#wrapper = document.querySelector('.content__wrapper');
-    // clearInterval(this.#intervalID);
-    // this.#userInput.remove();
-    // this.#confirmButton.remove();
-    // this.#confirmButton = document.createElement('div');
-    // this.#userInput = document.createElement('div');
+    this.close();
     this.#renderUserInput();
-    // this.#intervalID = 0;
   }
 
   #renderUserInput() {
@@ -158,5 +152,6 @@ export class TimerModule extends Module {
     this.#confirmButton = document.createElement('div');
     this.#userInput = document.createElement('div');
     this.#intervalID = 0;
+    this.#color = randomColor();
   }
 }
