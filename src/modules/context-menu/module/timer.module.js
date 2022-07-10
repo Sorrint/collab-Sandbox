@@ -154,5 +154,6 @@ export class TimerModule extends Module {
     this.#confirmButton = document.createElement('div');
     this.#userInput = document.createElement('div');
     this.#intervalID = 0;
+    this.#color = randomColor();
   }
 }
