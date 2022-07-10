@@ -27,21 +27,21 @@ export class TimerModule extends Module {
     this.#image = document.createElement('img');
     this.#limitMessage = document.createElement('span');
     this.#timerSpan = document.createElement('span');
-    this.#wrapper;
+    this.#wrapper = document.querySelector('.content__wrapper');
     this.#increaseTimer = document.createElement('div');
     this.#decreaseTimer = document.createElement('div');
     this.#confirmButton = document.createElement('div');
   }
 
   trigger() {
-    this.#wrapper = document.querySelector('.content__wrapper');
-    clearInterval(this.#intervalID);
-    this.#userInput.remove();
-    this.#confirmButton.remove();
-    this.#confirmButton = document.createElement('div');
-    this.#userInput = document.createElement('div');
+    // this.#wrapper = document.querySelector('.content__wrapper');
+    // clearInterval(this.#intervalID);
+    // this.#userInput.remove();
+    // this.#confirmButton.remove();
+    // this.#confirmButton = document.createElement('div');
+    // this.#userInput = document.createElement('div');
     this.#renderUserInput();
-    this.#intervalID = 0;
+    // this.#intervalID = 0;
   }
 
   #renderUserInput() {
@@ -148,5 +148,15 @@ export class TimerModule extends Module {
     element.style.boxShadow = `0 0 2px ${this.#color}, 0 0 10px ${this.#color}`;
     element.style.color = `${this.#color}`;
     element.style.textShadow = `0 0 2px ${this.#color}, 0 0 5px ${this.#color}`;
+  }
+
+  close() {
+    this.#wrapper = document.querySelector('.content__wrapper');
+    clearInterval(this.#intervalID);
+    this.#userInput.remove();
+    this.#confirmButton.remove();
+    this.#confirmButton = document.createElement('div');
+    this.#userInput = document.createElement('div');
+    this.#intervalID = 0;
   }
 }

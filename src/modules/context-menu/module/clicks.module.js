@@ -31,6 +31,7 @@ export class ClicksModule extends Module {
     this.timerBlockContainer = document.createElement('div'); // block game
     this.timerInfo = document.createElement('div'); // block game
     this.timerCount = document.createElement('div'); // block game
+    this.timerID = 0;
     this.clicksCount = document.createElement('div'); // block game
 
     /* Секция Результат */
@@ -271,7 +272,7 @@ export class ClicksModule extends Module {
       this.result.style.display = 'none';
       this.clicksCount.style.display = 'none';
       this.countNumbers.style.display = 'block';
-      this.timerCount.textContent = 5;
+      this.timerCount.textContent = 10;
       this.gameStart();
     });
   }
@@ -288,5 +289,16 @@ export class ClicksModule extends Module {
       this.timerCount.style.display = 'block';
       this.timer();
     });
+  }
+
+  close() {
+    const wrapper = document.querySelector(`.content__wrapper`);
+    wrapper.innerHTML = ``;
+    this.block.style.display = 'none';
+    this.result.style.display = 'none';
+    this.clicksCount.style.display = 'none';
+    this.countNumbers.style.display = 'block';
+    this.timerCount.textContent = 10;
+    // clearInterval(this.timerID);
   }
 }
