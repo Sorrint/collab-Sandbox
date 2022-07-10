@@ -4,24 +4,26 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
+
   height: 0;
   width: 100%;
-
   padding: 15px;
 }
 
 .weather-block {
   display: inline-block;
+
   margin: 0 20px 20px 0;
-  font-family: "Montserrat", sans-serif;
-  width: 260px;
-  color: #1b1a1a;
-  background-color: rgb(255, 255, 255);
-  border-radius: 15px;
   padding: 40px 40px;
-  overflow: hidden;
+  width: 260px;
+  border-radius: 15px;
   max-width: 260px;
   max-height: 225px;
+
+  font-family: "Montserrat", sans-serif;
+  color: #1b1a1a;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
 }
 
 .icon_and_temp_block {

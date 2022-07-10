@@ -35,7 +35,6 @@ export class TimerModule extends Module {
   }
 
   trigger() {
-    console.log(this.#color);
     this.close();
     this.#renderUserInput();
   }
