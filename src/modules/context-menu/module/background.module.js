@@ -22,7 +22,7 @@ export class BackgroundModule extends Module {
 
   #isBackground() {
     const classList = [...this.#content.classList];
-    return classList.some((el) => el === 'content_backgroundSize');
+    return classList.some((el) => el === 'randomBackground');
   }
 
   async trigger() {
@@ -35,7 +35,7 @@ export class BackgroundModule extends Module {
         const response = await fetch(`${this.#IMAGE_URL}`);
         const decodingResponse = await response.json();
         const image = decodingResponse[this.#randomIndex];
-        this.#content.classList.add('content_backgroundSize');
+        this.#content.classList.add('randomBackground');
         this.#content.style.backgroundImage = `url(${image.download_url}?grayscale)`;
         this.#imageArray = [...decodingResponse];
       }
