@@ -1,5 +1,6 @@
 import { Module } from '../core/module';
 import { randomColor } from '../utils';
+import { PARENT_LEFT, PARENT_TOP } from '../../../global';
 
 export class ClicksModule extends Module {
   constructor(type, text) {
@@ -165,35 +166,40 @@ export class ClicksModule extends Module {
 
   buttonsAnimated() {
     this.btn1.onmousemove = (e) => {
-      const x = e.pageX - this.btn1.offsetLeft;
+      const parentLeft = this.btn1.offsetParent.offsetLeft;
+      const x = e.pageX - parentLeft - this.btn1.offsetLeft;
       const y = e.pageY - this.btn1.offsetTop;
       this.btn1.style.setProperty('--x', x + 'px');
       this.btn1.style.setProperty('--y', y + 'px');
     };
 
     this.btn2.onmousemove = (e) => {
-      const x = e.pageX - this.btn2.offsetLeft;
+      const parentLeft = this.btn2.offsetParent.offsetLeft;
+      const x = e.pageX - parentLeft - this.btn2.offsetLeft;
       const y = e.pageY - this.btn2.offsetTop;
       this.btn2.style.setProperty('--x', x + 'px');
       this.btn2.style.setProperty('--y', y + 'px');
     };
 
     this.blockGame.onmousemove = (e) => {
-      const x = e.pageX - this.blockGame.offsetLeft;
+      const parentLeft = this.blockGame.offsetParent.offsetLeft;
+      const x = e.pageX - parentLeft - this.blockGame.offsetLeft;
       const y = e.pageY - this.blockGame.offsetTop;
       this.blockGame.style.setProperty('--x', x + 'px');
       this.blockGame.style.setProperty('--y', y + 'px');
     };
 
     this.btn3.onmousemove = (e) => {
-      const x = e.pageX - this.btn3.offsetLeft;
+      const parentLeft = this.btn3.offsetParent.offsetLeft;
+      const x = e.pageX - parentLeft - this.btn3.offsetLeft;
       const y = e.pageY - this.btn3.offsetTop;
       this.btn3.style.setProperty('--x', x + 'px');
       this.btn3.style.setProperty('--y', y + 'px');
     };
 
     this.btn4.onmousemove = (e) => {
-      const x = e.pageX - this.btn4.offsetLeft;
+      const parentLeft = this.btn4.offsetParent.offsetLeft;
+      const x = e.pageX - parentLeft - this.btn4.offsetLeft;
       const y = e.pageY - this.btn4.offsetTop;
       this.btn4.style.setProperty('--x', x + 'px');
       this.btn4.style.setProperty('--y', y + 'px');
