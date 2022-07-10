@@ -60,6 +60,7 @@ export class ContextMenu extends Menu {
         selectedModule.closePrev === true &&
         selectedModule !== previousModule
       ) {
+        wrapper.classList.remove(`${wrapperType}`);
         previousModule.close();
         wrapper.dataset.type = selectedModule.type;
         selectedModule.trigger();

@@ -1,7 +1,19 @@
+.custom-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  min-width: 100%;
+  min-height: 100%;
+  padding: 15px;
+}
+
 .weather-block {
   display: inline-block;
   margin: 0 20px 20px 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   width: 260px;
   color: #1b1a1a;
   background-color: rgb(255, 255, 255);
