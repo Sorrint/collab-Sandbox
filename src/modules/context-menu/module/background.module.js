@@ -22,7 +22,7 @@ export class BackgroundModule extends Module {
 
   #isBackground() {
     const classList = [...this.#content.classList];
-    return classList.some((el) => el === 'content_background');
+    return classList.some((el) => el === 'content_backgroundSize');
   }
 
   async trigger() {
@@ -30,14 +30,13 @@ export class BackgroundModule extends Module {
       if (this.#isBackground()) {
         const rundomIndx = random(0, this.#imageArray.length - 1);
         const image = this.#imageArray[rundomIndx];
-        this.#content.style.backgroundImage = `url(${image.download_url})`;
+        this.#content.style.backgroundImage = `url(${image.download_url}?grayscale)`;
       } else {
         const response = await fetch(`${this.#IMAGE_URL}`);
         const decodingResponse = await response.json();
         const image = decodingResponse[this.#randomIndex];
-        this.#content.classList.add('content_background');
-        this.#content.style.backgroundImage = `url(${image.download_url})`;
-        this.#content.style.backgroundSize = 'cover';
+        this.#content.classList.add('content_backgroundSize');
+        this.#content.style.backgroundImage = `url(${image.download_url}?grayscale)`;
         this.#imageArray = [...decodingResponse];
       }
     } catch {
