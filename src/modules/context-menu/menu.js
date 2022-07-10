@@ -25,7 +25,7 @@ export class ContextMenu extends Menu {
         const openedModule = this.modules.find(
           (module) => module.type === wrapper.dataset.type
         );
-        // openedModule.close();
+        openedModule.close();
       }
       const selectedModule = this.modules.find(
         (module) => module.type === target.dataset.type
