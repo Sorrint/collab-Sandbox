@@ -1,3 +1,15 @@
+.custom-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 0;
+  width: 100%;
+
+  padding: 15px;
+}
+
 .weather-block {
   display: inline-block;
   margin: 0 20px 20px 0;
@@ -26,14 +38,4 @@
   height: 102.67px;
 
   font-size: 30px;
-}
-
-.weather_icon {
-  width: 100px;
-  height: 102.67px;
-}
-
-.custom-message-container {
-  display: flex;
-  flex-direction: row;
 }

@@ -16,6 +16,9 @@ export class CustomMessage extends Module {
       const weather = await response.json();
       const temp = Math.round(weather.main.temp);
 
+      const weatherWrapper = document.createElement('div');
+      weatherWrapper.className = 'weather__wrapper';
+
       const weatherBlock = document.createElement('div');
       weatherBlock.className = 'weather-block';
 
@@ -41,10 +44,11 @@ export class CustomMessage extends Module {
       iconAndTempBlock.append(weatherIcon, tempPara);
       weatherBlock.append(weatherH2, iconAndTempBlock, weatherDescription);
       wrapper.prepend(weatherBlock);
+      wrapper.classList.add(`${this.type}`);
 
-      setTimeout(() => {
-        weatherBlock.remove();
-      }, 5000);
+      // setTimeout(() => {
+      //   weatherBlock.remove();
+      // }, 5000);
     } catch (error) {
       console.error('Произошла ошибка в получении данных...');
     } finally {
