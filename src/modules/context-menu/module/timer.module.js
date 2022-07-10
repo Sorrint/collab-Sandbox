@@ -19,6 +19,7 @@ export class TimerModule extends Module {
 
   constructor(type, text) {
     super(type, text);
+    this.closePrev = true;
     this.#timerText = document.createElement('span');
     this.#userInput = document.createElement('div');
     this.#minutes;
@@ -34,14 +35,8 @@ export class TimerModule extends Module {
   }
 
   trigger() {
-    // this.#wrapper = document.querySelector('.content__wrapper');
-    // clearInterval(this.#intervalID);
-    // this.#userInput.remove();
-    // this.#confirmButton.remove();
-    // this.#confirmButton = document.createElement('div');
-    // this.#userInput = document.createElement('div');
+    this.close();
     this.#renderUserInput();
-    // this.#intervalID = 0;
   }
 
   #renderUserInput() {

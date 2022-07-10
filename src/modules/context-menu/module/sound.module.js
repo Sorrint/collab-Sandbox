@@ -10,6 +10,7 @@ export class Soundmodule extends Module {
 
   constructor(type, text) {
     super(type, text);
+    this.closePrev = true;
     this.#logoHTML = document.createElement('div');
     this.#audioHTML = document.createElement('audio');
     this.#textHint = document.createElement('span');

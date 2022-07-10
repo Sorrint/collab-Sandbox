@@ -7,6 +7,7 @@ export class ShapeModule extends Module {
   #body;
   constructor(type, text) {
     super(type, text);
+    this.closePrev = false;
     this.#body = document.querySelector('body');
   }
 

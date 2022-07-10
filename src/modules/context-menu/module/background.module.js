@@ -10,6 +10,7 @@ export class BackgroundModule extends Module {
 
   constructor(type, text) {
     super(type, text);
+    this.closePrev = false;
     this.#imageArray = [];
     this.#numberOfImages = 100;
     this.#randomIndex = random(0, this.#numberOfImages - 1);
