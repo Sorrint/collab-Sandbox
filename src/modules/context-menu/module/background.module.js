@@ -2,22 +2,48 @@ import { Module } from '../core/module';
 import { random } from '../utils';
 
 export class BackgroundModule extends Module {
+  #content;
+  #IMAGE_URL;
+  #imageArray;
+  #randomIndex;
+  #numberOfImages;
+
   constructor(type, text) {
     super(type, text);
     this.closePrev = false;
+    this.#imageArray = [];
+    this.#numberOfImages = 100;
+    this.#randomIndex = random(0, this.#numberOfImages - 1);
+    this.#content = document.querySelector('.content');
+    this.#IMAGE_URL = `https://picsum.photos/v2/list?page=2&limit=${
+      this.#numberOfImages
+    }`;
   }
 
-  trigger() {
-    const main = document.querySelector('main');
-    const isClass = document.querySelector('.content_backgroundSize');
-    const image = 'url(https://picsum.photos/1400/800?grayscale)';
-    const image2 = 'url(https://picsum.photos/1400/900?grayscale)';
-    if (isClass) {
-      main.style.backgroundImage = '';
-      main.style.backgroundImage = `${image2}`;
-    } else {
-      main.style.backgroundImage = `${image}`;
-      main.classList.add('content_backgroundSize');
+  #isBackground() {
+    const classList = [...this.#content.classList];
+    return classList.some((el) => el === 'content_backgroundSize');
+  }
+
+  async trigger() {
+    try {
+      if (this.#isBackground()) {
+        const rundomIndx = random(0, this.#imageArray.length - 1);
+        const image = this.#imageArray[rundomIndx];
+        this.#content.style.backgroundImage = `url(${image.download_url}?grayscale)`;
+      } else {
+        const response = await fetch(`${this.#IMAGE_URL}`);
+        const decodingResponse = await response.json();
+        const image = decodingResponse[this.#randomIndex];
+        this.#content.classList.add('content_backgroundSize');
+        this.#content.style.backgroundImage = `url(${image.download_url}?grayscale)`;
+        this.#imageArray = [...decodingResponse];
+      }
+    } catch {
+      console.error(
+        'Произошла ошибка в получении данных... При запросе background image'
+      );
+    } finally {
     }
   }
 }
