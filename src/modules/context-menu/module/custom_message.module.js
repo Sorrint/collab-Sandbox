@@ -4,6 +4,7 @@ import { citiesData } from '../assets/citiesData';
 export class CustomMessage extends Module {
   constructor(type, text) {
     super(type, text);
+    this.closePrev = true;
   }
 
   async trigger() {

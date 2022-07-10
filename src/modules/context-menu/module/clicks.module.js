@@ -4,6 +4,7 @@ import { randomColor } from '../utils';
 export class ClicksModule extends Module {
   constructor(type, text) {
     super(type, text);
+    this.closePrev = true;
     /* Секция сыграем в игру */
     this.countNumbers = document.createElement('section'); //count-numbers
     this.countNumbersContainer = document.createElement('div'); //count-numbers container
@@ -299,6 +300,5 @@ export class ClicksModule extends Module {
     this.clicksCount.style.display = 'none';
     this.countNumbers.style.display = 'block';
     this.timerCount.textContent = 10;
-    // clearInterval(this.timerID);
   }
 }
