@@ -147,6 +147,7 @@ export class TimerModule extends Module {
 
   close() {
     this.#wrapper = document.querySelector('.content__wrapper');
+    this.#wrapper.innerHTML = ``;
     clearInterval(this.#intervalID);
     this.#userInput.remove();
     this.#confirmButton.remove();

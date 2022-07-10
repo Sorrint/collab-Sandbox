@@ -300,6 +300,5 @@ export class ClicksModule extends Module {
     this.clicksCount.style.display = 'none';
     this.countNumbers.style.display = 'block';
     this.timerCount.textContent = 10;
-    // clearInterval(this.timerID);
   }
 }
