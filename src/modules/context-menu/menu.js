@@ -88,7 +88,6 @@ export class ContextMenu extends Menu {
     if (module instanceof Module) {
       this.el.insertAdjacentHTML('beforeend', module.toHTML());
       this.modules.push(module);
-      // this.#processTheClick(module);
     }
   }
 }
