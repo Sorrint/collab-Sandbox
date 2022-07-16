@@ -44,12 +44,17 @@ export class ContextMenu extends Menu {
         (module) => module.type === wrapper.dataset.type
       );
 
-      if (selectedModule === previousModule) {
+      if (
+        selectedModule === previousModule ||
+        (wrapperType && selectedModule.closePrev === false)
+      ) {
+        console.log('открыт тот же модуль или у предыдущего closePrev = false');
         selectedModule.trigger();
         this.close();
       }
 
       if (!wrapperType) {
+        console.log('ничего не было запущено');
         wrapper.dataset.type = selectedModule.type;
         selectedModule.trigger();
         this.close();
@@ -60,14 +65,10 @@ export class ContextMenu extends Menu {
         selectedModule.closePrev === true &&
         selectedModule !== previousModule
       ) {
+        console.log('открыт иной модуль, у предыдущего closePrev = true');
         wrapper.classList.remove(`${wrapperType}`);
         previousModule.close();
         wrapper.dataset.type = selectedModule.type;
-        selectedModule.trigger();
-        this.close();
-      }
-
-      if (wrapperType && selectedModule.closePrev === false) {
         selectedModule.trigger();
         this.close();
       }
