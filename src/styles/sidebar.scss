@@ -7,8 +7,8 @@
   border: 1px solid black;
   background-size: cover;
   background-color: rgb(62, 63, 61);
-  background: url(https://camouf.ru/local/templates/mibazarov/components/bitrix/menu/aside_multimenu/derevo.jpg) 35%
-    100% no-repeat;
+  background: url(https://camouf.ru/local/templates/mibazarov/components/bitrix/menu/aside_multimenu/derevo.jpg) 35% /
+    cover no-repeat;
   &__cover {
     display: flex;
     flex-direction: column;
