@@ -1,0 +1,44 @@
+.custom-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  height: 0;
+  width: 100%;
+  padding: 15px;
+}
+
+.weather-block {
+  display: inline-block;
+
+  margin: 0 20px 20px 0;
+  padding: 40px 40px;
+  width: 260px;
+  border-radius: 15px;
+  border: 1px solid #1e1e1e;
+  max-width: 260px;
+  max-height: 225px;
+
+  font-family: "Montserrat", sans-serif;
+  color: #1b1a1a;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+.icon_and_temp_block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2.5em;
+  font-weight: 100;
+}
+
+.weather_icon {
+  width: 100px;
+  height: 102.67px;
+
+  font-size: 30px;
+}

@@ -1,0 +1,115 @@
+.sidebar {
+  font-family: "ROBOTO";
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px solid black;
+  background-size: cover;
+  background-color: rgb(62, 63, 61);
+  background: url(https://camouf.ru/local/templates/mibazarov/components/bitrix/menu/aside_multimenu/derevo.jpg) 35% /
+    cover no-repeat;
+  &__cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100vh;
+
+    background: rgba(25, 26, 25, 0.5);
+  }
+
+  &__logo {
+    flex: 0 1 auto;
+    background-size: cover;
+  }
+
+  &__nav {
+    flex: 1 1 auto;
+    padding: 50px 0 10px 0;
+
+    border-bottom: 1px dashed rgba(190, 190, 190, 0.7);
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 130px;
+    margin-bottom: 15px;
+    padding: 23px 0 0 30px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 45px;
+    width: 180px;
+    border-radius: 50px;
+    font-size: 14px;
+  }
+}
+
+.logo {
+  &__img {
+    width: 100%;
+  }
+}
+
+.nav {
+  &__menu {
+    list-style: none;
+  }
+
+  &__element {
+    height: 33px;
+    margin: 0 0 3px 0;
+    padding: 5px 0 1px 30px;
+  }
+
+  &__element span {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+  }
+
+  &__element span::after {
+    margin-top: 5px;
+    content: "";
+    width: 0px;
+    height: 3px;
+    background-color: aliceblue;
+  }
+
+  &__element span:hover::after {
+    display: block;
+    transition: 0.15s ease-out all;
+    width: 40px;
+  }
+
+  &__element.active span::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #7a8e9a;
+  }
+}
+
+.contacts {
+  font-size: 13px;
+  font-weight: normal;
+
+  &__source {
+    color: #ccc;
+  }
+}
+
+.button {
+  color: #354550;
+  background-color: #e2ae00;
+  cursor: pointer;
+}

@@ -1,0 +1,70 @@
+.sound {
+  display: flex;
+
+  text-align: center;
+  align-items: center;
+}
+
+.soundHint {
+  display: block;
+  position: relative;
+
+  margin: 20px 0 0 0;
+  text-align: center;
+
+  font-size: 30px;
+  color: white;
+  text-shadow: 0px 0px 5px #0fffc1, 0px 0px 10px #0fffc1, 0px 0px 10px #0fffc1, 0px 0px 20px #0fffaf;
+}
+
+.soundContainer {
+  display: flex;
+
+  height: 50vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoSound {
+  position: fixed;
+
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  list-style: none;
+
+  background: rgb(30, 11, 197);
+  background-size: cover;
+  background-position: center center;
+  background-color: #1d212b;
+  box-shadow: 0px 0px 5px #96fde3, 0px 0px 10px #4ae6bf, 0px 0px 10px #0fffc1, 0px 0px 20px #00ff55;
+}
+
+.logoSound::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+
+  top: -2vw;
+  left: -10px;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+
+  transform: scale(0.75);
+  -webkit-filter: blur(5vw);
+  -moz-filter: blur(5vw);
+  -ms-filter: blur(5vw);
+  filter: blur(5vw);
+  background: linear-gradient(270deg, #0fffc1, #7e0fff);
+  background-size: 200% 200%;
+  animation: animateGlow 10s ease infinite;
+}

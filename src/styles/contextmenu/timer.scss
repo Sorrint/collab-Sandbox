@@ -1,0 +1,82 @@
+.timer-block {
+  display: flex;
+  align-items: center;
+
+  font-size: 30px;
+  text-align: center;
+}
+
+.timer-span {
+  font-size: 60px;
+}
+
+.timer-text {
+  margin: 0 auto;
+  font-size: 5rem;
+  padding-top: 5px;
+}
+
+.image-meme {
+  left: 10%;
+  display: block;
+}
+
+.user-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 20px auto;
+  padding: 0 2%;
+
+  min-width: 400px;
+  min-height: 80px;
+
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  background-color: #343434;
+}
+
+.limit-message {
+  display: block;
+  line-height: 50%;
+  text-align: center;
+
+  width: 450px;
+  height: 35px;
+  padding: 10px;
+  font-size: 1.7rem;
+
+  background-color: #343434;
+}
+
+.confirm {
+  width: 40%;
+}
+
+.user-button {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  width: 20%;
+  min-width: 70px;
+  min-height: 50px;
+  margin-right: 5px;
+
+  font-size: 2rem;
+  border-radius: 5px;
+
+  background-color: #343434;
+  cursor: pointer;
+}
+
+.confirm {
+  width: 30%;
+}
+
+.hidden {
+  display: none;
+}
