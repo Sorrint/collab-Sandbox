@@ -22,8 +22,8 @@ export class TimerModule extends Module {
     this.closePrev = true;
     this.#timerText = document.createElement('span');
     this.#userInput = document.createElement('div');
-    this.#minutes;
-    this.#seconds;
+    this.#minutes = 0;
+    this.#seconds = 60;
     this.#color = randomColor();
     this.#image = document.createElement('img');
     this.#limitMessage = document.createElement('span');

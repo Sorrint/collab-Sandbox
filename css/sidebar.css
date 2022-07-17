@@ -1,0 +1,131 @@
+.sidebar {
+  font-family: "ROBOTO";
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px solid black;
+  background-size: cover;
+  background-color: #3e3f3d;
+  background: url(https://camouf.ru/local/templates/mibazarov/components/bitrix/menu/aside_multimenu/derevo.jpg) 35%/cover no-repeat;
+}
+
+.sidebar__cover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100vh;
+  background: rgba(25, 26, 25, 0.5);
+}
+
+.sidebar__logo {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  background-size: cover;
+}
+
+.sidebar__nav {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 50px 0 10px 0;
+  border-bottom: 1px dashed rgba(190, 190, 190, 0.7);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.sidebar__contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 130px;
+  margin-bottom: 15px;
+  padding: 23px 0 0 30px;
+}
+
+.sidebar__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 45px;
+  width: 180px;
+  border-radius: 50px;
+  font-size: 14px;
+}
+
+.logo__img {
+  width: 100%;
+}
+
+.nav__menu {
+  list-style: none;
+}
+
+.nav__element {
+  height: 33px;
+  margin: 0 0 3px 0;
+  padding: 5px 0 1px 30px;
+}
+
+.nav__element span {
+  cursor: pointer;
+  display: block;
+  height: 100%;
+}
+
+.nav__element span::after {
+  margin-top: 5px;
+  content: "";
+  width: 0px;
+  height: 3px;
+  background-color: aliceblue;
+}
+
+.nav__element span:hover::after {
+  display: block;
+  -webkit-transition: 0.15s ease-out all;
+  transition: 0.15s ease-out all;
+  width: 40px;
+}
+
+.nav__element.active span::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #7a8e9a;
+}
+
+.contacts {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.contacts__source {
+  color: #ccc;
+}
+
+.button {
+  color: #354550;
+  background-color: #e2ae00;
+  cursor: pointer;
+}

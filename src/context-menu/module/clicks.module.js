@@ -54,9 +54,9 @@ export class ClicksModule extends Module {
     this.buttonsAnimated();
     this.hideFirst();
     this.hideSecond();
-    this.clickCount;
+    this.clickCount = 0;
     this.colored();
-    this.timer;
+    this.timer = 0;
     this.gameStart();
     this.resetDom();
     this.repeatGame();
@@ -267,7 +267,7 @@ export class ClicksModule extends Module {
 
   resetDom() {
     this.btn4.addEventListener('click', () => {
-      location.reload();
+      Location.reload();
     });
   }
 

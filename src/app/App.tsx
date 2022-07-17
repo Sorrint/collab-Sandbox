@@ -3,7 +3,7 @@ import Sidebar from './components/sidebar/sidebar';
 
 function App() {
   return (
-    <div>
+    <div className="flex w-full h-screen">
       <Sidebar />
       <Content />
     </div>

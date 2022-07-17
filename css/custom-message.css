@@ -1,0 +1,55 @@
+.custom-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 0;
+  width: 100%;
+  padding: 15px;
+}
+
+.weather-block {
+  display: inline-block;
+  margin: 0 20px 20px 0;
+  padding: 40px 40px;
+  width: 260px;
+  border-radius: 15px;
+  border: 1px solid #1e1e1e;
+  max-width: 260px;
+  max-height: 225px;
+  font-family: "Montserrat", sans-serif;
+  color: #1b1a1a;
+  background-color: white;
+  overflow: hidden;
+}
+
+.icon_and_temp_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2.5em;
+  font-weight: 100;
+}
+
+.weather_icon {
+  width: 100px;
+  height: 102.67px;
+  font-size: 30px;
+}

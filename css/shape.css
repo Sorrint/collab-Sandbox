@@ -1,0 +1,26 @@
+.svg {
+  display: block;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: 4.5s show ease;
+          animation: 4.5s show ease;
+}
+
+@-webkit-keyframes show {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
