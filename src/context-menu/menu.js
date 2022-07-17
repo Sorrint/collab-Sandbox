@@ -8,8 +8,8 @@ export class ContextMenu extends Menu {
   constructor(selector) {
     super(selector);
     this.modules = [];
-    this.#parent = document.querySelector('body');
-    // this.#parent = this.#body.querySelector('.content');
+    this.#body = document.querySelector('body');
+    this.#parent = this.#body.querySelector('.content');
     this.#parent.addEventListener('contextmenu', (event) => {
       event.preventDefault();
       this.open();

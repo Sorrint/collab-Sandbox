@@ -11,8 +11,11 @@ const Content = () => {
     }
   };
   return (
-    <div className="content body__content w-full flex-auto">
-      <h2 onContextMenu={handleClick}>Content</h2>
+    <div
+      className="content body__content w-full flex-auto"
+      onContextMenu={handleClick}
+    >
+      <div className="content__wrapper"></div>
     </div>
   );
 };
