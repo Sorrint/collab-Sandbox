@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
         );
       })}
-      <div className="button sidebar__button flex items-center justify-around h-40px w-44 rounded-lg text-base bg-amber-300 mb-5 mt-4">
+      <div className="button sidebar__button flex items-center justify-around h-40px w-44 rounded-lg text-base bg-amber-300 mb-5 mt-4 cursor-pointer">
         <span className="text button__text h-full text-gray-700">
           Заказать проект
         </span>
