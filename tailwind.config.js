@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     height: {
       '40px': '40px',
+      '2px': '2px',
       '200px': '200px',
       '800px': '800px',
     },

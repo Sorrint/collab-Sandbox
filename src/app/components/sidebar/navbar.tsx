@@ -22,7 +22,7 @@ const Navbar = () => {
                 key={element.id}
                 className="nav__element h-8 pl-8 pb-px pt-1 cursor-pointer"
               >
-                <span className="hover:after:ease-out hover:after:duration-300  after:content-[''] after:block after:w-0 hover:after:h-0.5 hover:after:w-10 hover:after:bg-zinc-400">
+                <span className="hover:after:ease-out hover:after:duration-300  after:content-[''] after:block after:w-0 hover:after:h-2px  hover:after:w-10 hover:after:bg-zinc-400">
                   {element.title}
                 </span>
               </li>
