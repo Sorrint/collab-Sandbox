@@ -14,7 +14,7 @@ const Navbar = () => {
   ];
   return (
     <>
-      <nav className="nav sidebar__nav flex-grow">
+      <nav className="nav sidebar__nav flex-auto w-full">
         <ul className="nav__menu text-white">
           {elementNames.map((element) => {
             return (

@@ -12,7 +12,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="contacts sidebar__contacts text-white text-sm flex-initial">
+    <div className="contacts sidebar__contacts text-white text-sm w-full">
       {contacts.map((contact) => {
         return (
           <div key={contact.id} className={'contacts__' && contact.title}>
